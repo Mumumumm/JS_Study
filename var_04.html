@@ -19,7 +19,17 @@
         document.write("0 === false : ", int, "<br>");
         // 0 은 문자열과 거짓이다 (거짓)
         int = 0 === false;
-        document.write("0 === false : ", int);
+        document.write("0 === false : ", int , "<hr>");
+
+
+        // 논리 연산자
+        let A = 10 > 5;
+        let B = 10 < 5;
+        document.write("T or F : ", A && B , "<br>"); // && 둘다 참일때 참
+        document.write("T or F : ", A || B , "<br>"); // || 한쪽만 참이면 참
+        document.write("T or F : ", !A , "<br>"); // 참을 부정
+        document.write("T or F : ", !B , "<br>"); // 거짓을 부정 
+
     </script>
 </body>
 </html>
