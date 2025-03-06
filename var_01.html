@@ -8,9 +8,58 @@
 <body>
     <h1> 자바스크립트 시작 </h1>
         <script>
+            // 덮어 씌우기 가능
             let a = 10;
-            document.write("a : " , a);
+            a = 20;
+            a = 30;
+            document.write("a : " , a , "<br>"); 
+
+            // 먼저 선언하고 선언값 주기
+            let b;
+            b = 20;
+            document.write("b : " , b);
+            b = 50;
+            document.write("b : ", b , "<br>");
+
+            // undefinednum 변수를 저장하고 값을 선언하지 않은상태
+            let c;
+            document.write("c : " , c, "<br>");
+
+            // null 비어있게 만든상태
+            let d;
+            d = null;
+            document.write("d : ", d, "<br>");
+
+            //  Number 은 정수 실수 모두 포함 3 or 3.14 덮어씌기 가능
+            Number = 5;
+            Number = 10.11;
+            document.write("number : ", Number, "<br>");
+
+            // const는 변수의 값을 변경할수 없다.
+            const pi = 3.14;
+            document.write("pi : ", pi, "<br>");
+
+            let text = "JSscript";
+            document.write("text : ", text, "<br>");
+
+            // 변수 선언후(e, f, g) 두 변수 합친 변수(g) 값 출력
+            let e = 1;
+            let f = 2;
+            let g =  e + f;
+            document.write("e + f = g : ", g, "<br>");
+
+            // 변수끼리 합쳐 출력하기
+            let num1 = 10;
+            let num2 = 5;
+            document.write("num1 * num2 : ", num1 * num2, "<br>");
+
+            // 문자열과 정수 합치기
+            let str = "hello";
+            let num3 = 123.456;
+            let merge = str + num3;
+            document.write("merge : ", merge);
         </script>
+        <br>
     <h1> 자바스크립트 끝 </h1>
 </body>
 </html>
