@@ -14,21 +14,34 @@
         document.write("2 < 3 : ", int, "<br>");
         int = 1 == true;
         document.write("1 == true : ", int, "<br>");
+        
         // 0 은 거짓이다 (참)
         int = 0 == false;
         document.write("0 === false : ", int, "<br>");
         // 0 은 문자열과 거짓이다 (거짓)
         int = 0 === false;
-        document.write("0 === false : ", int , "<hr>");
+        document.write("0 === false : ", int , "<br>");
 
+        let str;
+        str = "a" > "b";
+        document.write("a : b ", str , "<hr>");
 
         // 논리 연산자
         let A = 10 > 5;
         let B = 10 < 5;
         document.write("T or F : ", A && B , "<br>"); // && 둘다 참일때 참
         document.write("T or F : ", A || B , "<br>"); // || 한쪽만 참이면 참
-        document.write("T or F : ", !A , "<br>"); // 참을 부정
-        document.write("T or F : ", !B , "<br>"); // 거짓을 부정 
+        document.write("T or F : ", !A , "<br>"); // ! 참을 부정
+        document.write("T or F : ", !B , "<br>"); // ! 거짓을 부정 
+
+        let x;
+        x = 80;
+        document.write(x >= 60 && x <= 100); // 60과 100 안에 들어가서(x) 참
+
+        let y;
+        y = 80;
+        document.write(x < 60 || x > 100); // 60보다 작거나 100보다 크지 않아서 (y) 거짓
+
 
     </script>
 </body>
