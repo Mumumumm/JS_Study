@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var7</title>
+</head>
+<body>
+    <script>
+        let tier = prompt("님 티어 몇?")
+        document.write("내 티어는 > ", tier , "<br>")
+        if(tier==="master" || tier==="마스터"){
+            document.write("마스터이상", "<br>");
+        }else{
+            document.write("마스터미만", "<br>");
+        }
+        document.write("그님티 끝~", "<hr>");
+
+        // -------------------------------------------------------
+
+        let score = parseInt(prompt("점수를 입력하세요"))
+        if(score >= 60 && score <=100){
+            document.write("합격이에요", "<br>");
+        }else{
+            document.write("불합격이에요", "<br>");
+        }
+        document.write("수고욤" , "<hr>");
+
+        // -------------------------------------------------------
+        
+        let name = prompt("이름을 먼저 작성하세요.")
+        let age = parseInt(prompt("님 몇살이에요?"))
+        if(age >= 20){
+            document.write("예 입장하세요~")
+        }else{
+            document.write("예 나가세요~")
+        }
+        document.write(" 검사했습니다.")
+    </script>
+</body>
+</html>
