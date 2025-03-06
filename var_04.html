@@ -14,7 +14,7 @@
         document.write("2 < 3 : ", int, "<br>");
         int = 1 == true;
         document.write("1 == true : ", int, "<br>");
-        
+
         // 0 은 거짓이다 (참)
         int = 0 == false;
         document.write("0 === false : ", int, "<br>");
@@ -32,16 +32,26 @@
         document.write("T or F : ", A && B , "<br>"); // && 둘다 참일때 참
         document.write("T or F : ", A || B , "<br>"); // || 한쪽만 참이면 참
         document.write("T or F : ", !A , "<br>"); // ! 참을 부정
-        document.write("T or F : ", !B , "<br>"); // ! 거짓을 부정 
+        document.write("T or F : ", !B , "<hr>"); // ! 거짓을 부정 
 
         let x;
         x = 80;
-        document.write(x >= 60 && x <= 100); // 60과 100 안에 들어가서(x) 참
+        document.write("60과 100안에 들어가는가 : ", x >= 60 && x <= 100 , "<br>"); // 60과 100 안에 들어가서(x) 참
 
         let y;
         y = 80;
-        document.write(x < 60 || x > 100); // 60보다 작거나 100보다 크지 않아서 (y) 거짓
+        document.write("60보다작거나 100보다 큰가 : ", x < 60 || x > 100 , "<hr>"); // 60보다 작거나 100보다 크지 않아서 (y) 거짓
 
+        document.write("true && true : ", (true && true), "<br>");
+        document.write("false && true : ", (false && true), "<br>");
+        document.write("false || true : ", (true || true), "<br>");
+        document.write("false || false : ", (false || false), "<br>");
+        document.write("!true : " , !true , "<br>");
+        document.write("!false : " , !false , "<hr>");
+
+        // 조건 걸어보기
+        let score = 65;
+        document.write("진짜에요? : ", (score >= 60 && score <=100));
 
     </script>
 </body>
