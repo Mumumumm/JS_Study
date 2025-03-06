@@ -45,7 +45,7 @@
       }else{
         document.write("평균이하입니다", "<br>");
       }
-      document.write("남성 평균 기준", "<hr>")
+      document.write("남성 평균 기준", "<hr>");
     }
 
     if(Boolean="여성"){
@@ -56,9 +56,13 @@
       }else{
         document.write("평균이하입니다", "<br>");
       }
-      document.write("여성 평균 기준", "<hr>")
+      document.write("여성 평균 기준", "<hr>");
     }
 
+    // prompt의 숫자문자열을 parseInt 로 숫자화
+    let a = parseInt(prompt("첫번째 숫자기입"));
+    let b = parseInt(prompt("두번째 숫자기입"));
+    document.write("a + b : ", a + b);
     
   </script>
 </body>
