@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var varNum = 1;
+        varNum = varNum + 10;
+        document.write("varNum : "+ varNum + "<hr>");
+
+        let letNum = "hello!";
+        letNum =  letNum + varNum;
+        document.write("letNum : "+ letNum + "<hr>");
+
+        const pi = 3.14;
+        document.write("pi : "+ pi);
+    </script>
+
+    <!-- 
+    , 사용 시: 값들이 나란히 출력되며, 연결되지 않습니다.
+
+    js
+    복사
+    편집
+    document.write("varNum : ", varNum);
+    출력: varNum : 11
+    
+    + 사용 시: 값들이 하나의 문자열로 연결되어 출력됩니다.
+    
+    js
+    복사
+    편집
+    document.write("varNum : " + varNum); -->
+</body>
+</html>
