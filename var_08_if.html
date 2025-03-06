@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> IF </title>
+</head>
+<body>
+    <script>
+        let name = prompt("이름을 적어라")
+        let age = parseInt(prompt("나이를 숫자로 기입해라"))
+        let gender = prompt("성별을 기입해라")
+        document.write(name , "님" , age , "살" , gender , "입니다." , "<hr>")
+
+        // -----------------------------------------------------------------------
+
+        let phon = prompt("Ios / Android ?");
+        document.write("나의 기종은 ")
+        if(phon==="ios"){
+            document.write("ios");
+        }else{
+            document.write("android");
+        }
+        document.write("입니다");
+    </script>
+</body>
+</html>

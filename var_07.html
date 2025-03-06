@@ -27,15 +27,17 @@
         document.write("수고욤" , "<hr>");
 
         // -------------------------------------------------------
-        
-        let name = prompt("이름을 먼저 작성하세요.")
-        let age = parseInt(prompt("님 몇살이에요?"))
+
+        // cut 에 null 을 넣어 빈 공간으로 만들고 조건에 따라 출력이 되게 만든다.
+        let name = prompt("이름을 먼저 작성하세요.");
+        let cut = "null";
+        let age = parseInt(prompt("님 몇살이에요?"));
         if(age >= 20){
-            document.write("예 입장하세요~")
+            cut = " 입장하세요";
         }else{
-            document.write("예 나가세요~")
-        }
-        document.write(" 검사했습니다.")
+            cut = " 나가세요";
+        }   
+        document.write(name, " 님", cut, " ^^7 ");
     </script>
 </body>
 </html>
