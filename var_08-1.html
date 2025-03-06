@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> self 예제</title>
+</head>
+
+<body>
+  <script>
+    let str;
+    str = '이것은 문장입니다'
+    document.write("str : ", str, '<hr>');
+
+    let num1, num2;
+    num1 = 10;
+    num2 = 20;
+
+    document.write("덧셈 : ", num1 + num2, "<br>");
+    document.write("뺄셈 : ", num1 - num2, "<br>");
+    document.write("나눗셈 : ", num1 / num2, "<br>");
+    document.write("곱셈 : ", num1 * num2, "<br>");
+    document.write("나머지 : ", num2 % num1, "<br>");
+    document.write("이항비교 > : ", num1 > num2, "<br>");
+    document.write("이항비교 < : ", num1 < num2, "<br>");
+    document.write("참 : ", num1 === 10, "<br>");
+    document.write("거짓 : ", num2 === 10, "<br>");
+    document.write("부정하기 : ", num2 !== 20, "<hr>");
+
+    // if문 else문 과 prompt, parseInt
+    let name = prompt("먼저 이름을 적으세요");
+    let gender = prompt("성별을 남성 또는 여성으로 적어주세요");
+    let stature = parseInt(prompt("당신의 키를 숫자로만 적어주세요"));
+    let weight = parseInt(prompt("당신의 몸무게를 숫자로 적어주세요"));
+    let check = prompt("준비가 되었습니다 확인을 원하시면 '예' 를적어주세요");
+
+    document.write(name + " 님 : " + gender ,"<br>");
+    document.write(stature + "cm " + weight + "kg", "<hr>");
+    if(Boolean="남성"){
+      if(stature >= 174 && stature <= 176){
+        document.write("평균입니다", "<br>")
+      }else if(stature >= 177){
+        document.write("평균이상입니다", "<br>");
+      }else{
+        document.write("평균이하입니다", "<br>");
+      }
+      document.write("남성 평균 기준", "<hr>")
+    }
+
+    if(Boolean="여성"){
+      if(stature >= 160 && stature <= 162){
+        document.write("평균입니다", "<br>")
+      }else if(stature >= 177){
+        document.write("평균이상입니다", "<br>");
+      }else{
+        document.write("평균이하입니다", "<br>");
+      }
+      document.write("여성 평균 기준", "<hr>")
+    }
+
+    
+  </script>
+</body>
+
+</html>
