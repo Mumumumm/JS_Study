@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let gender;
+        let age;
+
+        age = prompt("나이를 입력해주세요 1~100");
+
+        if (age >= 101 || age <= 0) {
+            document.write("장난치지마십쇼");
+        } else if (age <= 19 && age >= 1) {
+            document.write("미성년자 입니다");
+        } else {
+            gender = prompt("성별을 입력해주세요");
+
+
+            if (gender === "여성" || gender === "남성") {
+            } if (gender === "여성") {
+                if (age >= 51 && age <= 100) {
+                    document.write("여성 50대 이상");
+                } else if (age >= 40 && age <= 50) {
+                    document.write("여성 40대");
+                } else if (age >= 49 && age <= 30) {
+                    document.write("여성 30대");
+                } else {
+                    document.write("여성 20대");
+                }
+            } else if (gender === "남성") {
+                if (age >= 51 && age <= 100) {
+                    document.write("남성 50대 이상");
+                } else if (age >= 40 && age <= 50) {
+                    document.write("남성 40대");
+                } else if (age >= 30 && age <= 29) {
+                    document.write("남성 30대");
+                } else {
+                    document.write("남성 20대");
+                }
+            }
+
+            else {
+                document.write("성별을 정확이입력하세요");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
