@@ -28,6 +28,8 @@
     document.write("거짓 : ", num2 === 10, "<br>");
     document.write("부정하기 : ", num2 !== 20, "<hr>");
 
+    // -------------------------------------------------------------------------------
+
     // if문 else문 과 prompt, parseInt
     let name = prompt("먼저 이름을 적으세요");
     let gender = prompt("성별을 남성 또는 여성으로 적어주세요");
@@ -35,36 +37,40 @@
     let weight = parseInt(prompt("당신의 몸무게를 숫자로 적어주세요"));
     let check = prompt("준비가 되었습니다 확인을 원하시면 '예' 를적어주세요");
 
-    document.write(name + " 님 : " + gender ,"<br>");
+    document.write(name + " 님 : " + gender, "<br>");
     document.write(stature + "cm " + weight + "kg", "<hr>");
-    if(Boolean="남성"){
-      if(stature >= 174 && stature <= 176){
+    if (gender === "남성") {
+      if (stature >= 174 && stature <= 176) {
         document.write("평균입니다", "<br>")
-      }else if(stature >= 177){
+      } else if (stature >= 177) {
         document.write("평균이상입니다", "<br>");
-      }else{
+      } else {
         document.write("평균이하입니다", "<br>");
       }
       document.write("남성 평균 기준", "<hr>");
     }
 
-    if(Boolean="여성"){
-      if(stature >= 160 && stature <= 162){
+    if (gender === "여성") {
+      if (stature >= 160 && stature <= 162) {
         document.write("평균입니다", "<br>")
-      }else if(stature >= 177){
+      } else if (stature >= 177) {
         document.write("평균이상입니다", "<br>");
-      }else{
+      } else {
         document.write("평균이하입니다", "<br>");
       }
       document.write("여성 평균 기준", "<hr>");
     }
 
+    // --------------------------------------------------------------------------
+
     // prompt의 숫자문자열을 parseInt 로 숫자화
     let a = parseInt(prompt("첫번째 숫자기입"));
     let b = parseInt(prompt("두번째 숫자기입"));
     document.write("a + b : ", a + b);
-    
+
   </script>
+
+  
 </body>
 
 </html>
