@@ -21,16 +21,25 @@
             select = prompt(name + "님 원하시는 업무를 적어주세요 '입금' / '출금' / '잔액확인'");
 
             if(select === "입금"){
-                document.write("입금");
+                deposit = parseInt(prompt("입금할 금액을 적어주세요"));
+                total_amount = amount + deposit;
+                document.write("입금전 금액 : ", amount, "원 <br> 입금할 금액 : ", deposit, "원 <br> 입금후 금액 : ", total_amount, "원");
+
             }else if(select === "출금"){
-                document.write("출금");
+                Withdrawal = parseInt(prompt("출금할 금액을 적어주세요"));
+                if(amount < Withdrawal || Withdrawal <= 0){
+                    document.write("현재 잔액보다 많거나 0원의 금액을 출금할수 없습니다.")
+                }else{
+                    total_amount = amount - Withdrawal;
+                    document.write("출금전 금액 : ", amount, "원 <br> 출금할 금액 : ", Withdrawal, "원 <br> 출금후 금액 : ", total_amount, "원");
+                }
+
             }else if(select === "잔액확인"){
-                document.write("잔액확인");
+                document.write(name,"님 의 현재잔액은 : ", amount,"원");
             }else{
-                document.write("하고 싶은게 없어보여 종료해드렸습니다.")
+                document.write("하고 싶은게 없어보여 종료해드렸습니다. :)");
             }
         }
-
         
     </script>
 </body>
