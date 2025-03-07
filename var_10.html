@@ -20,15 +20,13 @@
             document.write("미성년자 입니다");
         } else {
             gender = prompt("성별을 입력해주세요");
-
-
             if (gender === "여성" || gender === "남성") {
             } if (gender === "여성") {
-                if (age >= 51 && age <= 100) {
+                if (age >= 50 && age <= 100) {
                     document.write("여성 50대 이상");
-                } else if (age >= 40 && age <= 50) {
+                } else if (age >= 40 && age <= 49) {
                     document.write("여성 40대");
-                } else if (age >= 49 && age <= 30) {
+                } else if (age >= 30 && age <= 39) {
                     document.write("여성 30대");
                 } else {
                     document.write("여성 20대");
@@ -36,16 +34,14 @@
             } else if (gender === "남성") {
                 if (age >= 51 && age <= 100) {
                     document.write("남성 50대 이상");
-                } else if (age >= 40 && age <= 50) {
+                } else if (age >= 40 && age <= 49) {
                     document.write("남성 40대");
-                } else if (age >= 30 && age <= 29) {
+                } else if (age >= 30 && age <= 39) {
                     document.write("남성 30대");
                 } else {
                     document.write("남성 20대");
                 }
-            }
-
-            else {
+            } else {
                 document.write("성별을 정확이입력하세요");
             }
         }
