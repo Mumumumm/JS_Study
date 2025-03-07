@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 은행 입출금 </title>
+</head>
+<body>
+    <script>
+        let amount = 200000;
+        let total_amount;
+        let Withdrawal;
+        let deposit;
+        let select
+
+        let name = prompt("통장 본인이름을 적어주세요")
+        let pw = parseInt(prompt("비밀번호를 입력해주세요"));
+        if(pw !== 1234){
+            document.write("비밀번호가 맞지 않습니다.");
+        }else{
+            select = prompt(name + "님 원하시는 업무를 적어주세요 '입금' / '출금' / '잔액확인'");
+
+            if(select === "입금"){
+                document.write("입금");
+            }else if(select === "출금"){
+                document.write("출금");
+            }else if(select === "잔액확인"){
+                document.write("잔액확인");
+            }else{
+                document.write("하고 싶은게 없어보여 종료해드렸습니다.")
+            }
+        }
+
+        
+    </script>
+</body>
+</html>
