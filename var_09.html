@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        let num = parseInt(prompt("숫자를 입력하세요"));
+        // 3항 조건문
+        let num = Number(prompt("숫자를 입력하세요"));
+        num % 2 === 0 ? document.write("짝수입니다." ,"<br>") : document.write("홀수입니다" ,"<br>");
+        // num이 2로 나머지를 구할때 0이 되어 참이면 짝수 거짓이면 홀수
 
-        if(num % 2 === 0){
-            document.write("짝수입니다.");
-        }else{
-            document.write("홀수입니다.");
+        // 다중 조건문
+        // if안에 if를 넣을수 있고, if 안 let 넣기 가능
+        let user = prompt("회원이신가요? 예/아니오")
+        if (user === "예") {
+            let coupon = parseInt(prompt("보유하고 있는 쿠폰 갯수"))
+            if (coupon >= 20) {
+                document.write("캐리어 제공");
+            } else if (coupon <= 19 && coupon >= 10) {
+                document.write("다이어리 제공");
+            } else if (coupon <= 9 && coupon >= 5) {
+                document.write("아메리카노 제공");
+            } else {
+                document.write("5개 이상부터 제공됩니다.");
+            }
+        } else {
+            document.write("회원가입이 필요합니다.")
         }
-        
     </script>
-    
+
 </body>
+
 </html>
