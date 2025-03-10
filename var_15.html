@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이동거리</title>
+</head>
+<body>
+    <h1>이동거리</h1>
+    <script>
+        const base_rate = 3000;
+        let time = parseInt(prompt("현재시간을 입력해주세요 00 ~ 23"));
+        let km = parseInt(prompt("이동할 거리를 입력해주세요"));
+        let a = 0;
+
+        //내가 이동한거리 
+        if(km > 10){
+            a = 700;
+        }else{
+            a = 500;
+        }
+        // 기본요금에 이동거리 요금 => b
+        let b = base_rate + km * a;
+
+        // 시간에 따른 할증 값
+        if(time >= 22 || time <= 6){
+            b = b * 1.2;
+        }
+
+        document.write("택시요금 : ", b);
+    </script>
+</body>
+</html>
