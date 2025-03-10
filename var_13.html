@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let calculate = parseInt(prompt("연산을 선택하세요 1.덧셈 2.뺼셈 3.곱셈 4.나눗셈"));
+        if (calculate < 0 || calculate > 4) {
+            document.write("잘못입력 하셨습니다 숫자 1~4 를 선택해주세요");
+        } else {
+            let num1 = parseInt(prompt("첫번째 숫자를 입력해주세요"));
+            let num2 = parseInt(prompt("두번째 숫자를 입력하세요"));
+            let result = 0;
+            
+            if (calculate === 1) {
+                result = num1 + num2;
+            } else if (calculate === 2) {
+                result = num1 - num2;
+            } else if (calculate === 3) {
+                result = num1 * num2;
+            } else {
+                result = num1 / num2;
+            }
+            document.write("연산결과 : ", result);
+        }
+
+    </script>
+</body>
+
+</html>
