@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let select = parseInt(prompt("1.덧셈 2.뺄셈 3.나눗셈 4.곱셈 숫자로 선택"));
+
+        if (select < 1 || select > 4) {
+            document.write("1~4 까지의 숫자를 입력해주세요");
+        } else {
+            let num1 = parseInt(prompt("첫번째 숫자 입력"));
+            let num2 = parseInt(prompt("두번째 숫자 입력"));
+            let total = 0;
+
+            switch (select) {
+                case 1:
+                    total = num1 + num2;
+                    break;
+                case 2:
+                    total = num1 - num2;
+                    break;
+                case 3:
+                    total = num1 / num2;
+                    break;
+                case 4:
+                    total = num1 * num2;
+                    break;
+            }
+            document.write("결과 : ", total);
+        }
+
+    </script>
+</body>
+
+</html>
