@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let score = parseInt(prompt("점수를 입력하세요"));
+
+        if (score > 100 || score < 0) {
+            document.write("잘못된 값");
+        } else {
+            if (score >= 60) { // score 가 60 이상일때만 들어간다
+                score = Math.floor(score / 10);
+                switch (score) {
+                    case 10:
+                        document.write("합격입니다"); // 100 score = Math.floor(score / 10);
+                        break;
+                    case 9:
+                        document.write("A등급입니다"); // 90 ~ 99 score = Math.floor(score / 10);
+                        break;
+                    case 8:
+                        document.write("B등급입니다"); // 80 ~ 89 score = Math.floor(score / 10);
+                        break;
+                    case 7:
+                        document.write("C등급입니다"); // 70 ~ 79 score = Math.floor(score / 10);
+                        break;
+                    case 6:
+                        document.write("D등급입니다"); // 60 ~ 99 score = Math.floor(score / 10);
+                        break;
+                }
+            } else {
+                document.write("불합격입니다")
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
