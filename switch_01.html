@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let coupon = parseInt(prompt("쿠폰 개수를 입력하시오"));
+        document.write("쿠폰 : ", coupon, "장 <hr>");
+        coupon = Math.floor(coupon / 10); //mate.floor 내장함수로 소수점을 날리는거
+        switch (coupon){
+            case 2:
+                document.write("여행 가방"); // 20개 이상일때
+                break;
+            case 1:
+                document.write("다이어리"); // 10개 이상일때 
+                break;
+            default:
+                document.write("커피 한잔") // 10개 미만일때
+        }
+    </script>
+</body>
+</html>

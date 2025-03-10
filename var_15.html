@@ -8,6 +8,7 @@
 <body>
     <h1>이동거리</h1>
     <script>
+        // ----------------------------------------------------------------------------
         const base_rate = 3000;
         let time = parseInt(prompt("현재시간을 입력해주세요 00 ~ 23"));
         let km = parseInt(prompt("이동할 거리를 입력해주세요"));
@@ -26,8 +27,25 @@
         if(time >= 22 || time <= 6){
             b = b * 1.2;
         }
+        document.write("택시요금 : ", b,"<br>");
+        // ----------------------------------------------------------------------------
+        let menu = prompt("음료를 골라주세요 아메리카노 / 카페라테");
 
-        document.write("택시요금 : ", b);
+        if(menu === "아메리카노" || menu === "카페라테"){
+            let meber = prompt("적립 하시겠습니까? yes / no");
+            if(meber === "yes"){
+                let phon = parseInt(prompt("번호를 - 빼고 입력해주세요"));
+                document.write("감사합니다 잠시만 기다려주세요");
+            }else{
+                document.write("주문 잠시 기다려주세요");
+            }
+
+        }else{
+            document.write("안고르고 나간다.");
+        }
+
+
+
     </script>
 </body>
 </html>
