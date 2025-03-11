@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const pw = "1234";
+        let count = 0;
+
+        while (true) {
+            let input = prompt("비밀번호 입력 현재");
+            count++
+
+            if(input === pw){
+                document.write("비밀번호가 맞다");
+                break;
+            }
+            if(count === 3){
+                document.write("3회 이상 실패");
+                break;
+            }
+        } 
+
+
+    </script>
+</body>
+
+</html>
