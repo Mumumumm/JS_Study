@@ -8,14 +8,17 @@
 <body>
     <script>
         let count = 0;
-        let total = 0;
-        
-        while(count < 5){
-            let number = parseInt(prompt("숫자"));
-            total = total + number;
+        let sum = 0;
+
+        let select = parseInt(prompt("몇 번 더하시겠습니까?"));
+
+        while(count < select){         
+            let num = parseInt(prompt("숫자를 입력하세요"));
+            sum = sum + num;
             count++;
         }
-        document.write("합계 : ", total);
+        document.write("합계 : ", sum);
+
     </script>
 </body>
 </html>
