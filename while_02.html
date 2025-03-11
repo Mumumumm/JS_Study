@@ -8,18 +8,17 @@
 <body>
     <script>
         let num = 1;
+        let count = 0;
         let sum = 0;
-        while(num < 500 ){
-            if(num % 3 === 0 && num % 5 === 0){
-                sum += num;
+        while(num <= 100){
+            if(num % 3 === 0){
+                count = count + 1;
+                sum = sum + num;
             }
             num++;
-            
         }
-        document.write(sum);
-
-
-
+        document.write("1부터 100까지의 3의배수는 : ", count, "개입니다.");
+        document.write("3의 배수 총 합계 : ", sum);
     </script>
 </body>
 </html>
