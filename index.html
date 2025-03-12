@@ -11,8 +11,7 @@
       // 할인이 적용되는 범위는 추가금액으로 설정한다
       // 타임세일은 기본금액과 추가금액 모두를 포함한다
       function amount(addition, time) {
-        let basicPrice = 50000; // 기본 금액 5만원
-        let price = basicPrice + addition; // 합산금액 = 기본금액 + 추가금액
+        const basicPrice = 50000; // 기본 금액 5만원
         if (addition >= 100000) { // 할인은 추가금액만 적용 addition
           addition = addition * 0.9;
           document.write("10만원 이상, 추가금액의 10% 할인적용 <br>");
@@ -22,7 +21,7 @@
         } else {
           document.write("5만원 미만은 할인이 없습니다 <br>");
         }
-        price = basicPrice + addition; // 타임세일은 전체 할인 조건이기 때문에 위 추가금액 할인 먼저 확인 후 계산한뒤 타임세일 조건을 확인한다.
+        const price = basicPrice + addition; // 합산금액 = 기본금액 + 추가금액 할인여부
         if (time >= 10 && time <= 18) { // 오전 10시부터 오후 6시까지
           price = price * 0.95;
           document.write("타임세일에 맞춰 총금액의 5% 할인이 됩니다 <br>");
@@ -40,7 +39,7 @@
           confirm("잘못된 금액 또는 시간을 입력했습니다.");
           continue;
         }
-        let amountChange = amount(buy, visit);
+        const amountChange = amount(buy, visit);
         document.write("총 합계 : ", amountChange);
         break; // 조건을 만족하고 빠져나감
       }
