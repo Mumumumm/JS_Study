@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        function getTaxy(km, h) {
-            let baseFare = 3000;
+      function getTaxy(km, h) {
+        let baseFare = 3000;
 
-            if (km <= 10) {
-                baseFare = baseFare + (km * 500);
-                document.write("10키로 이하 키로당 500원 <br>");
-            } else {
-                baseFare = baseFare + (km * 700);
-                document.write("10키로 초과 키로당 700원 <br>");
-            }
-            if (h >= 22 || h <= 6) {
-                baseFare = baseFare * 1.2;
-                document.write("심야 할증 1.2배 <br>");
-            }
-
-            return baseFare;
+        if (km <= 10) {
+          baseFare = baseFare + km * 500;
+          document.write("10키로 이하 키로당 500원 <br>");
+        } else {
+          baseFare = baseFare + km * 700;
+          document.write("10키로 초과 키로당 700원 <br>");
         }
-        while (true) {
-            let distance = parseInt(prompt("이동거리를 입력하세요(km)"));
-            let hour = parseInt(prompt("탑승 시간을 입력하세요(0~23)"));
-
-            if (distance < 1 || hour < 0 || hour > 23) {
-                confirm("잘못 입력하셨습니다");
-                continue;
-            }
-
-            let taxy = getTaxy(distance, hour);
-
-            document.write("기본 요금은 3000원<br> 총금액은 : ", taxy);
-            break;
+        if (h >= 22 || h <= 6) {
+          baseFare = baseFare * 1.2;
+          document.write("심야 할증 1.2배 <br>");
         }
 
+        return baseFare;
+      }
+      while (true) {
+        let distance = parseInt(prompt("이동거리를 입력하세요(km)"));
+        let hour = parseInt(prompt("탑승 시간을 입력하세요(0~23)"));
+
+        if (distance < 1 || hour < 0 || hour > 23) {
+          confirm("잘못 입력하셨습니다");
+          continue;
+        }
+
+        let taxy = getTaxy(distance, hour);
+
+        document.write("기본 요금은 3000원<br> 총금액은 : ", taxy);
+        break;
+      }
     </script>
-</body>
-
+  </body>
 </html>
