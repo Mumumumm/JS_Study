@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function reversString(str) {
+            let result = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                result = result + str[i];
+            }
+
+            return result;
+        }
+
+        document.write(reversString("abc"));
+
+        //--------------------------------------------------------------------
+
+        function makeFood(num) {
+            let result = "<img src='/images/food" + num + ".png'>";
+            return result;
+        }
+
+        const food = parseInt(prompt("햄버거 1 / 피자 2 / 감자튀김 3"));
+        if (food < 1 || food > 3){
+            document.write("없는 음식입니다");
+        }else{
+            const result = makeFood(food);
+            document.write(result);
+            document.write("식사 맛있게 하세요");
+        }
+            // 어려웠던 내용
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function result(num) { // 3. score에서 입력받은 숫자를 function 매개변수(num)에 입력
+            // 4. 조건에 해당하는 값을 받고 return
+            if (num >= 90) {
+                return "a등급";
+            } else if (num >= 80) {
+                return "b등급";
+            } else if (num >= 70) {
+                return "c등급";
+            } else {
+                return "d등급";
+            }
+        }
+        let score = parseInt(prompt("점수를 입력하세요")); // 1. score 변수에 점수를 입력
+
+        if (score > 100 || score < 0) { // 2. if 조건이 참이면 잘못된 값 실행
+            document.write("잘못된 값입니다.");
+        } else if (score <= 60) { // 2-1. 조건이 60과 같거나 작다면 실행
+            document.write("불합격 입니다.")
+        }
+        else { // 2-2. 위 조건이 모두 해당되지 않는다면 실행
+            const total = result(score); // 5. return 된 값을 total에 대입 * score -> result(num 에 score입력) -> 입력값에 조건이 되는것을 return *
+            document.write("합격입니다."); // 6. 출력
+            document.write(total); // 6-1. return된 값을 출력
+        }
+
+
+
+
+
+
+
+        function result(num) { 
+            
+            if (num >= 90) {
+                return "a등급";
+            } else if (num >= 80) {
+                return "b등급";
+            } else if (num >= 70) {
+                return "c등급";
+            } else {
+                return "d등급";
+            }
+        }
+        while (true) {
+            let score = parseInt(prompt("점수를 입력하세요"));
+
+            if (score > 100 || score < 0) { 
+                confirm("잘못된 값입니다.");
+                continue;
+            }
+            if (score > 60) { 
+                const total = result(score);
+                document.write("합격입니다.");
+                document.write(total);
+            }
+            else {
+                document.write("합격입니다.");
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

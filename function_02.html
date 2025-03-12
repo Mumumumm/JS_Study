@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function max(n1 ,n2){
+        //     return n1 > n2 ? n1 : n2; 
+        //     // n1 이 n2 보다 큰지 ? 물었을때 참이라면 좌측이(n1) 거짓이라면 우측(n2)이 결과로 나온다
+        //     // 삼항 연산자 두개를 비교했을때 ? 를 사용해 참 거짓을 구분
+        // }
+        // // 각 n1 = 3, n2 =5 호출
+        // document.write(max(3, 5));
+        // //------------------------------------------------------------
+        // function repeatString(str, times){ //매개 변수를 입력
+        //     let result = ""; // 문자열에 아직 아무것도 입력 안한상태 
+        //     for(let i = 0; i < times; i++){
+        //         result = result + str
+        //     }
+
+        //     return  result;
+        // }
+
+        // document.write(repeatString("ab", 3));
+        //------------------------------------------------------------
+        function reverseString(str) {
+            let revers = "";
+
+            for (let i = str.length - 1; i >= 0; i--) { // i는 srt의 인덱스 길이 -1 만큼 선언후; i를 0보다 크고 같으면; i (str의 인덱스)를 감소한다
+                revers = revers + str[i]; // revers 는 revers("";) 에 str의 [] 인덱스 숫자 를 대입한다
+            } // 여기서 중괄호가 닫혀 끝난다
+
+            return revers; // for 에서 반복수행 3번한값을 반환한다 .
+
+        }
+        document.write(reverseString("abc"));
+        // 매개변수 str 을  abc로 넣었을때 cba로 출력하기
+
+        //------------------------------------------------------------
+
+        function reversNumber(str1) {
+            let reversStr = "";
+            for(i = str1.length-1 ; i >= 0 ; i--){
+                reversStr = reversStr + str1[i];
+            }
+
+            return reversStr;
+        }
+        document.write(reversNumber("efg"));
+
+        //------------------------------------------------------------
+
+        function hij (str3){
+            let revers_st;
+
+            for(let i = str3.length-1; i >= 0; i--){
+                
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

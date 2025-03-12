@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
 
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
     <script>
-      // 소수점 찾기
-      let prime = 0;
-      // 초기식 ;조건식 ;증감식
-      for (let i = 2; i <= 100; i++) {
-        let count = 0; // 이 위치에 둬서 반복시작할때 초기화
-        for (let j = 2; j <= i / 2; j++) {
-          if (i % j === 0) {
-            count++;
-          }
-        }
-        if (count === 0) {
-          prime++;
-        }
-      }
-      document.write(prime);
+        // 참 거짓으로 찾기
+        // 소수점 찾기
+        let prime = 0;
+
+        // 초기식 ;조건식 ;증감식
+        for (let i = 2; i <= 100; i++) {
+            let flag = false; // 처음은 flase로 설정
+
+            for (let j = 2; j <= (i / 2); j++) {
+                if (i % j === 0) {
+                    flag = true; // 나누어 떨어졌다면 참으로 변경
+                    break; // 한 번 이라도 나누어 떨어졌다면 실행 멈춤
+                }
+            }
+            if (!flag) { // 나누어 떨어지지 않아 처음 설정 한 flase라면 prime 에 증가 (!flag) flag가 거짓이라면
+                prime++;
+            }
+        } document.write("소수의 갯수는 : ", prime);
+
+        // --------------------------------------------------------------------------------------------------------------
+        // 외부 변수
+        // let count = 0;
+
+        // // 소수점 찾기
+        // let prime = 0;
+
+        // // 초기식 ;조건식 ;증감식
+        // for (let i = 2; i <= 100; i++) {
+        //     let flag = false; // 처음은 flase로 설정
+
+        //     for (let j = 2; j <= (i / 2); j++) {
+        //         if (i % j === 0) {
+        //             flag = true; // 나누어 떨어졌다면 참으로 변경
+        //             break; // 한 번 이라도 나누어 떨어졌다면 실행 멈춤
+        //         }
+        //     }
+        //     if (!flag) { // 나누어 떨어지지 않아 처음 설정 한 flase라면 prime 에 증가 (!flag) flag가 거짓이라면
+        //         prime++;
+        //     }
+        // } document.write("소수의 갯수는 : ", prime);
+        
+        // 수정 안했어요 25-03-12 김준홍
     </script>
-  </body>
+</body>
+
 </html>
