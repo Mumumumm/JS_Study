@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = 3, b = 4;
+        let sum = (num1, num2) => { return num1 + num2; }
+        document.write(a, "+", b, "=", sum(a, b));
+
+        //===================================================
+        // 색상 변경
+        function changeColor(colors) { // 매개변수 colors
+            document.getElementById("alter");
+            alter.style.color = colors; // alert에 style안에 color에 대입한다 colors를;
+            // onclick="changeColor('red')" 하면 red가 colors 매개변수로 들어가고 red로 변경된다
+        }
+        //===================================================
+        // 랜덤음식 뽑기
+        function randomFood(){ // 함수생성
+            const money = parseInt(document.getElementById('input').value); // id 가 input인 것을  숫자로 변환해 money에 대입
+            const fnum = Math.floor(money / 1200); // 입력한 money 를 1200으로 나누고 소수는 떼버림
+            const change =  money - (fnum * 1200); // fnum에 * 1200원을 한뒤 money에 입력된 값에 뺀다
+            if (money >= 1200){ // money에 입력한 값이 1200보다 크고 같으면 실행
+                for(let i = 1; i <= fnum; i++){ // i는 fnum에 저장된 값보다 작고 같으면 반복 실행
+                    const food = Math.floor(Math.random() * 3) + 1; // 소수는 다떼고 랜덤함수를 돌린다 3미만으로 랜덤은 0부터 시작하고 계산후 +1 해준다
+                    document.write(i + "<img src='./images/food"+food+".png'>"); // i는 숫자 출력을 위한용 + 이미지 뿌리기
+                }
+                document.write("<h3>주문금액 : ", fnum * 1200," 잔돈 : ", change);
+                // h3태그에 주문한 값 ex 5000 = 4 * 1200 잔돈 200
+            }else{
+                document.write("금액이 부족합니다") // 입력값이 1200보다 작을때
+            }
+        }   
+        // money = 입력받을 값 변수
+        // fnum = 음식이 나올변수
+        // change = 잔돈을 나오게할 변수
+        
+    </script>
+
+    <h1 id="alter"> change Color_onclick</h1>
+    <button onclick="changeColor('red')">빨간색</button>
+    <button onclick="changeColor('blue')">파란색</button>
+    <button onclick="changeColor('green')">초록색</button>
+    <button onclick="changeColor('yellow')">노란색</button>
+    <br><br>
+    <!-- =================================================== -->
+
+    <input type="text" id="input">
+    <button onclick="randomFood()">지출</button>
+
+</body>
+
+</html>

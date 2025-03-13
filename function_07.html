@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sum(num1, num2, opNumber) {
+            let total = 0;
+            if (opNumber === 1) {
+                total = num1 + num2;
+            } else if (opNumber === 2) {
+                total = num1 - num2;
+            } else if (opNumber === 3) {
+                total = num1 * num2;
+            } else if (opNumber === 4) {
+                total = num1 / num2;
+            }
+            return total;
+        }
+            while(true){
+            let select = parseInt(prompt("원하시는 작업을 번호로 눌러주세요 1.덧셈 / 2.뺄셈 / 3.곱셈 / 4.나눗셈")); // 매개변수의 opNumber에 보낼것
+            if(select < 0 || select > 4){
+                confirm("잘못 입력했습니다");
+                continue;
+            }
+            let first = parseInt(prompt("첫번째 숫자를 입력하세요")); // 매개변수의 num1로 보낼것
+            let second = parseInt(prompt("두번째 숫자를 입력하세요")); // 매개변수의 num2로 보낼것
+            let firstXsecond = sum(first, second, select); // 각각 첫번째숫자, 두번째숫자, 작업번호 를 function 매개변수에 넣는다
+            document.write("첫번째숫자 : ", first, "<br> 두번째숫자 : ", second, "<br> 총 합계 : ", firstXsecond);
+            break;
+        }
+        
+
+    </script>
+</body>
+
+</html>
