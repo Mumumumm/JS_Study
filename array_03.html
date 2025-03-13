@@ -13,32 +13,53 @@
         // 사용자 함수를 만들어서 각자역할 지정
         // 각자역할( 합계, 평균, 인데스숫자) 
 
-        let index = 0;
-        let arr = [];
-        let sum = 0;
+        // let index = 0;
+        // let arr = [];
+        // let sum = 0;
 
         // 배열 값 추가하기
         function arrData(){
-            while (true) {
-                let num = parseInt(prompt("숫자 입력하세요 원하지 않으면 -1"));
-                if (isNaN(num)) {
+            let index = 0;
+            let arr = [];
+            while (true) { // 반복문 실행
+                let num = parseInt(prompt("숫자 입력하세요 원하지 않으면 -1")); // 배열에 추가 할 만큼 입력
+                if (isNaN(num)) { // 숫자가 아닐시 오류로 처리
                     alert("숫자로 다시입력하세요")
-                } else if (num === -1) {
+                } else if (num === -1) { // -1로 조건 만족시 반복을 종료
                     break;
                 }
                 arr[index] = num; // num을 입력해서 index에 값을 추가 ex) arr[1,3,5,7] 배열길이랑 다르다
                 index++ //index++는 num 숫자를 입력할 때마다 배열에서 다음 위치로 이동하기 위해 필요하다
+                // 반복이 처음 실행될때는 arr[0 = index]는 0번 상단에서 0으로 선언했기때문에 그다음 한바퀴 돌면 arr[1]
+                // 즉 반복할 수 록 index가 + 되어arr의 인덱스 번호가 올라간다 
             }
-            return arr;
+            return arr; // 반복실행후 값을 리턴 arrData에 저장
         }
 
-        //합계 만들어보기
-        function totalData(arr){
-            for(i = 0; i < arr.length; i++){
-            sum = sum + arr;
+        function addData(arr){ // 매개변수에 arr을 적어 arrData에 있는 arr변수를 가져온다
+            let sum = 0;
+            for(i = 0; i < arr.length; i++){ // arr의 배열을 구해 합계 알아보기
+                sum = sum + arr[i]; // arr[i] 로 i가 증가할때마다 arr[n번째] 에 해당하는 값 sum에 누적
             }
-            return sum;
+            return sum; // 반복실행후 addData에 저장
         }
+
+        function indexData(arr){
+            for(i = 0; i < arr.length; i++){
+                document.write(`arr의 인덱스 ${arr[i]}`);
+            }
+        }
+
+        let total = arrData(); // arrData를 total 변수에 대입
+        let sumData = addData(total); // addData를 total 매개변수로 넣어 호출
+        
+        let avg = sumData / total.length; // arrData() 에서 대입, 리턴된 arr 배열길이를 total.length 로 알수있다
+
+        document.write(`arr에 담긴 숫자 : arr[${total}] <br>`);
+        document.write(`arr 숫자 총합 : ${sumData}<br>`);
+        document.write(`arr의 평균값 ${avg}<br>`);
+
+
     </script>
 </body>
 
