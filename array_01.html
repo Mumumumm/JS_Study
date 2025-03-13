@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [
+            10,
+            20,
+            30,
+            1.1,
+            2.2,
+            3.3,
+            "열",
+            "이십",
+            "삼십",
+            true,
+            false,
+        ]
+        for (i = 0; i <= arr.length - 1; i++)
+            document.write(arr[i], "<br>");
+
+        const arr1 = [
+            10,
+            20,
+            30,
+            1.1,
+            2.2,
+            3.3,
+            "열",
+            "이십",
+            "삼십",
+            true,
+            false,
+        ]
+        for (i = arr1.length - 1; i >= 0; i--)
+            document.write("<br>", arr1[i]);
+
+
+
+        const arr2 = [10, 20, 30, 40, 50];
+        for (let i = 0; i < 5; i++) {
+            document.write("[", i, "] =", arr2[i], " ");
+        }
+
+
+
+        const arr3 = [10, 20, 30, 40, 50];
+        for (let i = 0; i < 5; i++) {
+            arr3[i] = arr3[i] + 100;
+            document.write("[", i, "] = ", arr3[i], "<br><br> ");
+            // i 는 0부터 반복한거 출력 [] 로 꾸밈 헷갈리지 말자
+            // arr3[i]는 arr3 배열의 i번째를 넣어 그걸 출력해준다
+        }
+    </script>
+</body>
+
+</html>
