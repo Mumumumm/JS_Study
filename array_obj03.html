@@ -25,30 +25,77 @@
 
         //----------------------------------------------------------------------------------------
 
-        // 내 풀이
-        let result = [];
+        // 내 풀이  map 활용
+        // let result = [];
 
-        for (i = 0; i < 10; i++) { // 랜덤 함수 생성
-            let score = Math.floor(Math.random() * 101);
-            result.push(score);
+        // for (i = 0; i < 10; i++) { // 랜덤 함수 생성
+        //     let score = Math.floor(Math.random() * 101);
+        //     result.push(score);
+        // }
+
+        // // 화살표 함수  ( 매개변수 ) => { 함수 } // rasult.map( 여기 안에 화살표 함수생성 () => {});
+        // let resultArr = result.map((e)=>{ // map() 괄호안에 화살표 함수 생성 매개변수는 e {} 함수는 if문
+        //     if(e >= 60){ // 60점 이상이면 합격
+        //         return "합격";
+        //     }else{ // 그 외 불합격
+        //         return "불합격";
+        //     }
+        // });
+
+        // document.write(result); // 랜덤함수 값 출력
+        // document.write("<br>", resultArr); // 합격 불합격 출력
+
+        // for(let i = 0; i < result.length; i++){
+        //     document.write(`<br> 점수는 : ${result[i]} 결과는 : ${resultArr[i]}`);
+        // }
+
+        //----------------------------------------------------------------------------------------
+        // filter 활용
+
+        let score = [];
+
+        for(i = 0; i < 10; i++){ // 점수 랜덤 생성
+            let random = Math.floor(Math.random() * 101);
+            score.push(random);
+            i++
         }
+        // 점수 거르기 60점 이상
+        let filterarr = score.filter((e)=> e >= 60); // score 에 필터링 e매개변수를 줘서 score 점수를 10번 결과 내고 60 이상인것만 출력
+        document.write(filterarr);
 
-        // 화살표 함수  ( 매개변수 ) => { 함수 } // rasult.map( 여기 안에 화살표 함수생성 () => {});
-        let resultArr = result.map((e)=>{ // map() 괄호안에 화살표 함수 생성 매개변수는 e {} 함수는 if문
-            if(e >= 60){ // 60점 이상이면 합격
-                return "합격";
-            }else{ // 그 외 불합격
-                return "불합격";
+        let rating = filterarr.map((a)=>{
+            if(a >= 90){
+                return "A등급";
+            }else if(a >= 80){
+                return "B등급";
+            }else if(a >= 70){
+                return "C등급";
+            }else if(a >= 60){
+                return "D등급";
             }
+
+            // // 스위치 활용 예시
+            // let number = Math.floor(e / 10);
+            // switch(number){
+            //     case 10:
+            //     case 9:
+            //         return"A등급"
+            //         break;
+            //     case 8:
+            //         return"B등급"
+            //         break;
+            //     case 7:
+            //         return"C등급"
+            //         break;
+            //     case 6:
+            //         return"D등급"
+            // }
         });
 
-        document.write(result); // 랜덤함수 값 출력
-        document.write("<br>", resultArr); // 합격 불합격 출력
+        // let sortArr = score.sort((a,b) => a - b); // 오름차순 sort 알고리즘관련
+        // sortArr = score.sort((a,b) => a - b); // 내림차순
 
-
-        // 맵 이용해서 기존점수와 변경 점수 뽑자
-
-
+        document.write(`<br> ${rating}`);
 
     </script>
 </body>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <input type="text" id="box">
+    <button onclick="changeText()"> 변경 </button>
+    <h1 id="change">강사님</h1>
+
+    <script>
+        function changeText(){
+            const input = document.getElementById("box"); // 변수생성 input 그것을 id가 box인것을 변수에 대입 box는 텍스트 타입 인풋태그
+            document.getElementById("change").innerText=input.value; // innetText = input.value 인풋 입력값을 innerText에 대입
+        }
+    </script>
+    
+</body>
+</html>

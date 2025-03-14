@@ -26,6 +26,7 @@
             const money = parseInt(document.getElementById('input').value); // id 가 input인 것을  숫자로 변환해 money에 대입
             const fnum = Math.floor(money / 1200); // 입력한 money 를 1200으로 나누고 소수는 떼버림
             const change =  money - (fnum * 1200); // fnum에 * 1200원을 한뒤 money에 입력된 값에 뺀다
+            
             if (money >= 1200){ // money에 입력한 값이 1200보다 크고 같으면 실행
                 for(let i = 1; i <= fnum; i++){ // i는 fnum에 저장된 값보다 작고 같으면 반복 실행
                     const food = Math.floor(Math.random() * 3) + 1; // 소수는 다떼고 랜덤함수를 돌린다 3미만으로 랜덤은 0부터 시작하고 계산후 +1 해준다
