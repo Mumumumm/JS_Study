@@ -55,7 +55,7 @@
 
             function inputData() {
             let arr = [];
-            let index = 0;
+            // let index = 0;
             while (true) {
                 let num = parseInt(prompt("숫자를 입력하세요"));
                 if (isNaN(num)) {
@@ -65,8 +65,9 @@
                 if (num === -1) {
                     break;
                 }
-                arr[index] = num;
-                index++;
+                arr.push(num)
+                // arr[index] = num;
+                // index++;
             }
             return arr;
             //arr을 리턴하지않으면 지역변수기 때문에 값이 초기화된다.
