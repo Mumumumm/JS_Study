@@ -6,14 +6,33 @@
     <title>Document</title>
 </head>
 <body>    
-    <input type="text" id="box">
+    <!--랜덤이름 생성기 같네-->
+    <input type="text" id="input">
     <button onclick="changeText()"> 변경 </button>
-    <h1 id="change">강사님</h1>
+    <h1 id="string" style="color: darkcyan; background-color: greenyellow;">강사님</h1>
+
+    <input type="text" id="id" placeholder="아이디를 입력하세요" required>
+    <input type="password" id="pw" placeholder="비밀번호를 입력하세요" required>
+    <button type="button" id="bt" onclick="login()">제  출</button>
+    <h1 id="login">"   "</h1>
+
+
+
+
+    <!---------아래는 스크립트▼------------위는 HTML▲------------------------------------------------------------------>
 
     <script>
         function changeText(){
-            const input = document.getElementById("box"); // 변수생성 input 그것을 id가 box인것을 변수에 대입 box는 텍스트 타입 인풋태그
-            document.getElementById("change").innerText=input.value; // innetText = input.value 인풋 입력값을 innerText에 대입
+            const input = document.getElementById("input"); // input태그의 아이디를 가져와 input에 대압
+            const output = document.getElementById("string"); // h1태그의 아이디를 가져와 output에 대입
+            output.innerText = input.value; // input 입력값(value)을 output 의 innerText(HTML 요소의 텍스트 내용을 읽거나 설정할 수 있는 속성) 에 대입
+            // input태그에 텍스트를 입력하면 input 이 대입된 output 텍스트 내용을 입력
+        }
+
+        function login(){
+            const userId = document.getElementById("id");
+            const userPw = document.getElementById("pw");
+            textPut = document.getElementById("login").innerText="제가 가져가겠습니다."
         }
     </script>
     
