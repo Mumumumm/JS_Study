@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        let arr = []
-        
-        for(i = 0; i < 10; i++){ // 총 10번 돌려서 10개 출력할거임 
-            arr[i] = Math.floor(Math.random() * 101); // 랜덤 함수로 0~ 100까지 반복할때마다 arr[i]에 랜덤 숫자 추가
+        // // 내 풀이
+        // let arr = []; // arr에 얼마나 들어갈지 모르니 빈 배열로 만들어놓는다
+        // for(i = 0; i < 10; i++){ // 총 10번 돌려서 10개 출력할거임 
+        //     arr[i] = Math.floor(Math.random() * 101); // 랜덤 함수로 0~ 100까지 반복할때마다 arr[i]에 랜덤 숫자 추가
+        // }
+        // document.write(" " + arr);
+
+        // // 강사님 풀이
+        // let scoreaArr = [];
+        // for(let i = 0; i < 10; i++){
+        //     let score = Math.floor(Math.random() * 101);
+        //     scoreaArr.push(score);
+        // }
+
+        //----------------------------------------------------------------------------------------
+
+        // 내 풀이
+        let result = [];
+
+        for (i = 0; i < 10; i++) { // 랜덤 함수 생성
+            let score = Math.floor(Math.random() * 101);
+            result.push(score);
         }
-        document.write(" " + arr);
+
+        // 화살표 함수  ( 매개변수 ) => { 함수 } // rasult.map( 여기 안에 화살표 함수생성 () => {});
+        let resultArr = result.map((e)=>{ // map() 괄호안에 화살표 함수 생성 매개변수는 e {} 함수는 if문
+            if(e >= 60){ // 60점 이상이면 합격
+                return "합격";
+            }else{ // 그 외 불합격
+                return "불합격";
+            }
+        });
+
+        document.write(result); // 랜덤함수 값 출력
+        document.write("<br>", resultArr); // 합격 불합격 출력
+
+
+        // 맵 이용해서 기존점수와 변경 점수 뽑자
+
+
 
     </script>
 </body>
+
 </html>
