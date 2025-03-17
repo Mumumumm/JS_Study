@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const s1 = new String("web ");
+        const s2 = "Programming";
+        // 변수 출력
+        document.write(`s1 = "${s1}"<br>`);
+        document.write(`s2 = "${s2}"<br>`);
+
+        // 0 번째의 인덱스의 문자를 반환
+        document.write(`s1.charAt(0) : ${s1.charAt(0)}<hr>`);
+
+        // s1 과 s2 를 붙임
+        document.write(`s1.concat(s2) : ${s1.concat(s2)}<hr>`);
+
+        // s2의 문자열 i 는 인덱스 몇번째에 있는지 출력
+        document.write(`s2.indexOf("i") : ${s2.indexOf("i")}<hr>`);
+
+        // s2의 m을 M으로 변경, m이 가장 먼저인것만
+        document.write(`s2.relace("m", "M") : ${s2.replace("m", "M")}<hr>`);
+
+        // s2 m의 문자열이 몇번째 인덱스에 있는지 출력 indexOf와 비슷한 기능
+        // 위에서 m을 M으로 바꿔서 M이 아닌 소문자 m 을 찾는다
+        document.write(`s2search("m") : ${s2.search("m")}<hr>`);
+
+        // s2의 a를 기준으로 나누는것 (a , ) 뒤에 숫자를 붙이면 나누는 최대를 정할수 있다
+        document.write(`s2.split("a") : ${s2.split("a")}<hr>`);
+
+        // s2 0번째 인덱스부터 길이 4만큼 반환 뒤 4를 빼면 배열의 끝까지 반환
+        document.write(`s2.substr(0,4) : ${s2.substr(0,4)}<hr>`);
+
+        // s2 3번부터 7번 전까지만 반환
+        document.write(`s2.subString(3, 7) : ${s2.substring(3, 7)}<hr>`);
+
+        // 3번 인덱스 부터 -1 인덱스 전까지만 반환  -1은 뒤에서부터 계산 0은 없다
+        document.write(`s2.slice(3, -1) : ${s2.slice(3, -1)}<hr>`);
+
+        // 모든 문자를 소문자로 변환
+        document.write(`s2.toLowerCase() : ${s2.toLowerCase()}<hr>`);
+
+        // 모든 문자를 대문자로 변환
+        document.write(`s2.toUpperCase() : ${s2.toUpperCase()}<hr>`);
+
+        // 양끝의 공백을 제거함 이번 출력에서 +를 붙인것은 공백이 사라진것을 확인하기 위해서.
+        document.write(`s1.trim() : +${s1.trim()}+<hr>`);
+    </script>
+</body>
+
+</html>
