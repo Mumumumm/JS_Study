@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>단어 첫 글자 대문자로 </h1>
+  <input type="text" id="inputText"> <!--변환을 위한 입력값 적는곳-->
+  <button onclick="stringButton()">변 경</button>
+  <div> 결과 <span id="result"></span> </div>
+
+  <!---------------------------------------------------------------------------->
+
+  <h1>단어를 거꾸로 되돌리기</h1>
+  <input type="text" id="revers">
+  <button onclick="a()">바꿔보기</button>
+  <div>결과 : <span id="reversResult"></span></div>
+
+  <!---------------------------------------------------------------------------->
+
+  <h1> 팰린드롬 검사 </h1>
+  <input type="text" id="inputBox">
+  <button onclick="textIn()">검사결과</button>
+  <div id="palindromeResult"></div>
+
+
+
+
+
+  <!---------------------------------------------------------------------------->
+
+  <script>
+    // // 
+    // //앞 대문자 바꾸기
+    // function stringButton() { // onclick 에 담을 함수
+    //   const inputString = document.getElementById('inputText').value // input 데이터값을 대입
+
+    //   const splitString = inputString.split(" "); // split 한 inputString을 splitString에 대입
+    //   for (let i = 0; i < splitString.length; i++) { // inputString 보다 작으면 반복 실행
+    //     splitString[i] = splitString[i].charAt[0].toUpperCase() + splitString[i].slice(1); // 반복문에서 i번째 인덱스 0번은 대문자를 그리고 i번째 1번부터 그 이후는 추출하여 붙인 뒤 대입
+    //     const change = document.getElementById("result"); // 결과값을 출력할 요소를 change에 대입
+    //     change.innerText = splitString.join(" ");
+    //   }
+    // }
+
+    // 뒤 대문자로 바꾸기
+    function stringButton() {
+      const inputString = document.getElementById("inputText").value;
+      const changeString = inputString.split(" "); // 문자열을 배열로 나누기 위함
+      // console.log(changeString.length);
+      // console.log(changeString[0].length);
+
+      for (i = 0; i < changeString.length; i++) {
+        // console.log(changeString[i].slice(0, changeString.length - 1));
+        changeString[i] = changeString[i].slice(0, changeString[i].length - 1) + changeString[i].charAt(changeString[i].length - 1).toUpperCase();
+        const tempA = document.getElementById("result");
+        tempA.innerText = changeString.join(" ");
+        // tempA.innerHTML = "<strong>빠이</strong>";
+
+
+        // innerHTML 은 태그요소까지 적용해서 결과를 보여준다
+        // innerText 는 태그요소를 포함하지 않고 값을 그대로를 출력
+
+        // += 붙여쓴다, = 만쓰면 덮어쓴다 차이를 생각하자
+
+        // changeString 과 changeString[i] 차이 
+        // changeString = inputString.split으로 나눈 배열 
+        // changeString[i] = changString[i]번째 문자들의 배열 
+      }
+    }
+
+    function a() {
+      let reversBox = "";
+      const reversText = document.getElementById("revers").value;
+
+      for (i = reversText.length; i >= 0; i--) {
+        reversBox += reversText[i];
+
+        const b = document.getElementById("reversResult");
+        b.innerText = reversBox;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    <!---------------------------------------------------------------------------->
+    // 팰린드롬 검사기
+    function textIn() {
+      const textCheck = document.getElementById("inputBox").value;
+      if (textCheck.charAt(0) === textCheck.length - 1) {
+        const palindrome = document.getElementById("palindromeResult");
+        palindrome.innerText = "참 입니다";
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>
