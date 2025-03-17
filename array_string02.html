@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+
+<body>
+    <h1>문자열에서 단어 찾기</h1>
+
+    <div>
+        <!-- 입력값 받기 -->
+        <textarea name="" id="inputText" style="width: 400px; height: 150px;"></textarea>
+    </div>
+        <!--textarea에 문자 분리하기 위해 만든 태그-->
+    <input id="searchText" type="text">
+        <!--버튼을 눌러 이벤트-->
+    <button onclick="inputText()">단어 카운트</button>
+    
+    <!--block 요소에 inline(span) 넣기-->
+    <h2>결과 : <span id="result">값은</span></h2>
+
+
+    <script>
+        // 입력값 받아오기
+        function inputText() {
+            const area = document.getElementById("inputText").value.toLowerCase(); // areatext에 값 전부를 area에, 값은 영소문자로
+            const search = document.getElementById("searchText").value.toLowerCase(); // input에 입력된 값을 전부 search에, 값은 영소문자로
+            const result = document.getElementById("result"); // 결과를 보일수 있는값을 spa 태그에
+
+            let parts = area.split(search); // area에 들어있는 값을 .split(search값으로)분리
+            const count = parts.length -1; // 나눠진 값에 -1 분리되면서 길이가 하나 더 늘어서
+
+        
+            result.length
+
+            // const result = document.getElementById("result"); // 결과를 보일수 있는값을 spa 태그에
+        }
+        
+        
+
+
+
+        // 텍스트에리어에 입력된 문자를 확인
+        // 텍스트 에리어에서 추출할 문자 입력을 확인
+        // 입력받은 문자를 카운트
+
+
+    </script>
+
+
+</body>
+
+</html>

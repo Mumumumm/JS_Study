@@ -8,7 +8,20 @@
 </head>
 
 <body>
+
+    <!-- <h1 style="";></h1> -->
+    
+    <!-- const colorArray = ["red","aqua","gray","purple","orange"];
+
+    for(let color of colorArray){
+        document.write("<h1 style='color:"+ color +"'>" + color + "</h1>"); 
+    } -->
+
+    <!-- <h1 style="color: ;">이거 참조 하기 위에 이해 안가면</h1> -->
+
+
     <script>
+        // 문자열과 array객체
         const s1 = new String("web ");
         const s2 = "Programming";
         // 변수 출력
@@ -51,6 +64,31 @@
 
         // 양끝의 공백을 제거함 이번 출력에서 +를 붙인것은 공백이 사라진것을 확인하기 위해서.
         document.write(`s1.trim() : +${s1.trim()}+<hr>`);
+
+
+        // 문자열 회전시키기
+        let str = "hurricane"; // 회전시킬 문자열 선언
+        let str1 = ""; // 빈 문자열 생성 회전용
+
+        for(i=0; i <= str.length; i++){
+            document.write(str + "<hr>");
+            str1 = str[0];
+            str = str.slice(1) + str1;
+        };
+
+
+        // for - of 반복문
+        const dayStrin = "월화수목금토일";
+        for(let day of dayStrin){
+            document.write(day + "요일<br>")
+        } 
+
+        // 색깔 놀이 활용
+        const colorArray = ["red","aqua","gray","purple","orange"];
+
+        for(let color of colorArray){
+            document.write("<h1 style='color:"+ color +"'>" + color + "</h1>"); 
+        }
     </script>
 </body>
 
