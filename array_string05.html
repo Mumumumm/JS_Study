@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>단어 첫 글자 대문자로 변환 하기</h1>
+    <input type="text" id="word">
+    <button onclick="firstWord()">확인</button>
+    <div>결과 : <span id="result"></span> </div>
+
+    <!------------------------------------------------------------------->
+
+    <h1>단어를 거꾸로 되돌리기</h1>
+    <input type="text" id="input">
+    <button onclick="reversText()">바꿔보기</button>
+    <div>결과 : <span id="reversResult"></span></div>
+
+
+
+
+
+
+    <script>
+        function firstWord(){
+            const text = document.getElementById("word").value; // id가 word인 값은 text에 대입
+            const splitArray = text.split(" "); //text 구분의 기준을 공백 " " 으로잡고 splitAttay에 대입
+
+            for(let i = 0; i < splitArray.length; i++){ // text.split 으로 나눠진 배열 순서만큼 i를 +
+                splitArray[i] = splitArray[i].charAt(0).toUpperCase() + splitArray[i].slice(1)
+                // splitAttay[i]번째의 0번은 대문자 영문으로 변경 + splitArray[i] 번째에 1번부터 i배열의 마지막까지 추출
+                const result = document.getElementById("result"); // result id를 가진 요소를 result에 대입
+                result.innerText = splitArray.join(" "); // result의 텍스트를 화면에 출력 join으로 각 배열을 다시 합친뒤 반환
+            }
+        }
+
+
+        function reversText(){
+            let emptyArray = "";
+            const revers = document.getElementById("input").value; // input값을 revers에 대입
+            for(let i = revers.length -1 ; i >= 0; i--){
+                emptyArray += revers[i] // 배열 i 번째를 emptyArray 에 대입
+
+                const reversArray = document.getElementById("reversResult"); // id가 reversResult인 요소를  reversArray에 대입
+                reversArray.innerText = emptyArray; // emptyArray에 배열들을 innerText로 화면에 출력
+            }
+        }
+    </script>
+
+    <br><br><br><br><br>
+    <p>innerText는 HTML 요소 안의 텍스트를 가져오거나 설정하는 JavaScript 속성입니다<br>
+        이 속성을 사용하면 특정 요소 내부의 텍스트 콘텐츠를 읽거나 변경할 수 있습니다.<br>
+        주로 HTML 태그와 같은 구조적인 요소를 제외하고, <br>
+        화면에 표시되는 텍스트만 다루기 때문에 사용자에게 보여지는 텍스트에 집중할 때 유용합니다.</p>
+</body>
+</html>

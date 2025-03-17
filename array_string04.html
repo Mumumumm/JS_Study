@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>단어 첫 글자 대문자로 변환</h1>
     <input type="text" id="inputText">
-    <button onclick="changeText()">변환</button>
+    <button onclick="changeText()">변환</button> <!--이벤트 핸들러-->
     <h3>결과</h3>
     <div id="result"></div>
 
     <script>
-        function changeText(){
+        function changeText() {
             const str = document.getElementById("inputText").value; // inputText에 있는 값을 str에 대입
             let change = str.split(" "); // 공백 기준으로 나누기 
-            for(let i = 0; i < change.length; i++){
+            for (let i = 0; i < change.length; i++) {
                 const firstArray = change[i];
                 // console.log(firstArray); // chabge 배열의 각 요소 출력
                 let firstChar = firstArray.charAt(0); // firstArray 의 첫번째 인덱스 가져오기
                 firstChar = firstChar.toUpperCase(); // 대문자 변환
                 firstChar += firstArray.slice(1); // 배열의 1번부터 마지막 배열까지 추출
-                
-                const resultStr = document.getElementById("result"); // 결과가 나올수 있게 id를 가져와 resultStr에 대입
-                resultStr.innerText = firstChar; // firstChar 결과값을 resultStr.innerText 에 대입
-            }
 
+                const resultStr = document.getElementById("result"); // 결과가 나올수 있게 id를 가져와 resultStr에 대입
+                resultStr.innerText = firstChar.join; // firstChar 결과값을 resultStr.innerText 에 대입
+            }
         }
+
+
+        function capitalizedWords() {
+            const text = document.getElementById("inputText").value;
+            const splitArr = text.split(" ");
+            // let newArray = [];
+
+            for (let i = 0; i < splitArr.length; i++) {
+                splitArr[i] = splitArr[i].charAt(0).toUpperCase() + splitArr[i].slice(1); // Aaa
+
+                const result = document.getElementById("spliArr");
+                result.innerText = splitArr.join(" ");
+            }
+        }
+
+        
+
     </script>
 </body>
+
 </html>
