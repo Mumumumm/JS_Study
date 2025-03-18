@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: "김준홍",
+            age: 27,
+            hobby: "커피추출하기",
+            myData: function () {
+                document.write("My name" + this.name + ", age :" + this.age + ", hobby :" + this.hobby + "<br>");
+            }
+        };
+
+        person.myData();
+
+        person.age = 25;
+        person.myData();
+
+        person.job = "programer"
+        document.write(person.job, "<br>");
+        //-------------------------------------------------------------------------------------------------
+        const car = {
+            brand: "Tesla",
+            model: "Model 3",
+            year: 2022,
+            start() {
+                document.write(`${this.brand} ${this.model} is starting<br>`);
+            },
+        }
+
+        car.start();
+        //-------------------------------------------------------------------------------------------------
+        const book = {
+            title: "JavaScript",
+            author: "김준홍",
+            page: 200,
+            publisher: "어디미디어",
+            read() {
+                document.write(`Reding :  ${this.title}by ${this.author}<br>`);
+            }
+        }
+
+        book.read();
+        //-------------------------------------------------------------------------------------------------
+        const calculator = {
+            add(a, b) {
+                return a + b;
+            },
+            subtract(a, b) {
+                return a - b;
+            },
+            multiply(a, b) {
+                return a * b;
+            },
+            divide(a, b) {
+                return a / b;
+            },
+        };
+
+        document.write(calculator.add(3, 5) + "<br>");
+        document.write(calculator.subtract(3, 5) + "<br>");
+        document.write(calculator.multiply(3, 5) + "<br>");
+        document.write(calculator.divide(3, 5) + "<br>");
+        //-------------------------------------------------------------------------------------------------
+
+        const shoppingCart = {
+            items: [], // 아이템이 들어갈 빈 배열
+            addItem(item) {
+                this.items.push(item);
+                console.log(`${item} : Add to Cart`);
+            },
+            removeItem(remove) {
+                this.items = this.items.filter((e) => e !== item); // 담겨있는 items 를 비교해서 item과 같지 않다면 참이기때문에 담는다. 같다면 거짓이기에 필터링한다
+
+            },
+            listItem() {
+                document.write(this.items);
+            },
+        }
+
+        shoppingCart.addItem("캡슐 커피 머신");
+        shoppingCart.addItem("캡슐 커피");
+        shoppingCart.addItem("커피 클리너");
+
+        shoppingCart.listItem();
+
+
+
+
+
+        //--------------------------------------------------------------------------------------
+
+        const bankAccount = {
+            owner: "junHong",
+            balance: 1000000,
+            accountNumber: "1222-45621-12-12",
+
+            deposit(amount) {
+                this.balance = this.balance + amount;
+                console.log(`${amount} 입금`);
+            },
+
+            wihtDraw(amount) {
+                if (this.balance < amount) {
+                    document.write("잔액이 부족합니다")
+                } else {
+                    this.balance = this.balance - amount;
+                    console.log(`${amount} 출금`);
+                }
+            },
+
+            displayBalance() {
+                document.write(`${this.owner}님의 잔액은 : ${this.balance} 입니다.`);
+            },
+        };
+
+        bankAccount.displayBalance();
+        bankAccount.deposit(20000);
+        bankAccount.wihtDraw(10000);
+        bankAccount.displayBalance();
+
+        //--------------------------------------------------------------------------------------
+
+
+    </script>
+</body>
+
+</html>
