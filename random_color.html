@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+</head>
+
+<body>
+    <p style="background-color: violet; width: 200px;"></p>
+    <script>
+        const letterts = "0123456789ABCDEF";
+        let color = "#"
+        let count = 1;
+        let intervalID = setInterval(changeColor, 3000); // 1초 마다 changeColor 함수 실행
+
+        function changeColor() {
+            if (++count > 25) {
+                clearInterval(intervalID);
+            }
+            for (let k = 0; k < 6; k++) {
+                color += letterts[Math.floor(Math.random() * 16)];
+            }
+            document.write(`<div style='background-color:${color}; width: 200px; padding: 50px;'>${color}</div>`);
+            color = "#";
+        }
+    </script>
+</body>
+
+</html>

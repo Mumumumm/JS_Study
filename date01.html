@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--날짜 계산기-->
+
+    <h2>궁금한 날짜를 입려가세요: </h2>
+    <input type="number" id="year" placeholder="년">
+    <input type="number" id="month" placeholder="월">
+    <input type="number" id="day" placeholder="일">
+    <button onclick="days()">계산하기</button>
+    <div id="today"></div>
+    <div id="result"></div>
+
+    <script>
+        const today = new Date();
+        const day = "일월화수목금토";
+        document.write(today + "<hr>");
+        document.write(today.toLocaleString() + "<hr>");
+        document.write(today.getFullYear() + "년<hr>");
+        document.write(today.getMonth() + 1 + "월<hr>");
+        document.write(today.getDate() + "일<hr>");
+        document.write(day[today.getDay()] + "요일<hr>");
+        document.write(today.getHours() + "시<hr>");
+        document.write(today.getMinutes() + "분<hr>");
+        document.wirte(today.getSeconds() + "초<hr>");
+
+        //----------------------------------------------------------------------
+
+        function days(){ // 함수 생성
+            const year = document.getElementById("year").value; // input 태그 년도의 기본값
+            const month = document.getElementById("month").value; // input 태그 월 의 기본값
+            const day = document.getElementById("day").value; // input 태그 일 의 기본값
+
+            const today = new Date(); // today 현재 실시간 Date 정보를 대입
+            const inputDate = new Date(year, month -1, day) // 상단에 있는 정보를 input 정보를 inputDate에 대입
+            const diffToday = today - inputDate // diffToday에 현재 실시간(today) - 입력한 정보 시간(inputDate) 차이를 대입
+            const result = Math.floor(diffToday / 1000 * 60 * 60 *24); // diffToday(차이값)을 하루로 나누고 대입 floor로 소수점 제거
+
+            document.getElementById("today").innerHTML=`${today.toLocaleString()}`;
+            if(diffToday >= 0){
+                document.getElementById("result").innerHTML=`${diffToday}일 전`;
+            }else{
+                document.getElementById("result").innerHTML=`${-(diffToday)}일 남았음`;
+            }
+        }
+    </script>
+</body>
+</html>
