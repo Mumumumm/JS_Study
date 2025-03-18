@@ -117,7 +117,7 @@
             },
 
             displayBalance() {
-                document.write(`${this.owner}님의 잔액은 : ${this.balance} 입니다.`);
+                document.write(`${this.owner}님의 잔액은 : ${this.balance} 입니다.<br><hr>`);
             },
         };
 
@@ -128,7 +128,40 @@
 
         //--------------------------------------------------------------------------------------
 
+        const lol = {
+            skileInfo: [], // 스킬정보를 담을것
+            items: [], // 필요 아이템
 
+            character: "", // 캐릭터 이름을 담을 문자
+
+            addSkile(info) {
+                this.skileInfo.push(info);
+            },
+
+            addItem(item) {
+                this.items.push(item);
+            },
+
+        }
+
+        lol.character = "lux";
+        lol.addSkile("qqqq");
+
+
+        lol.addItem("1순위");
+        lol.addItem("2순위");
+        lol.addItem("3순위");
+        lol.addItem("4순위");
+        lol.addItem("5순위");
+        lol.addItem("6순위");
+
+
+
+
+
+
+        console.log(`이름 정보 : ${lol.character}<br> 스킬 : ${lol.skileInfo}<br> 아이템 : ${lol.items}`);
+        document.write(`이름 정보 : ${lol.character}<br>  스킬 : ${lol.skileInfo}<br> 아이템 : ${lol.items}`);
     </script>
 </body>
 
