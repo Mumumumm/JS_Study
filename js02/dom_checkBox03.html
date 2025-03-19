@@ -1,23 +1,156 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #order {
+            padding: 5px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
+
 <body>
     <!--빵-->
+    <p>빵 종류 선택</p>
     <div>
-
+        <select name="" id="bread">
+            <option value="">---빵 선택---</option>
+            <option value="하티">하티</option>
+            <option value="화이트">화이트</option>
+            <option value="파마산오레가노">파마산오레가노</option>
+            <option value="위트">위트</option>
+            <option value="허니오트">허니오트</option>
+            <option value="플랫브래드">플랫브래드</option>
+        </select>
     </div>
-    
+    <hr>
     <!--치즈-->
+    <p>치즈 선택</p>
     <div>
-
+        <select name="" id="cheez">
+            <option value="">---치즈 선택---</option>
+            <option value="아메리칸치즈">아메리칸치즈</option>
+            <option value="모짜렐라치즈">모짜렐라치즈</option>
+            <option value="슈레드치즈">슈레드치즈</option>
+        </select>
     </div>
+    <hr>
+    <!--추가 재료-->
+    <p>추가 재료 선택</p>
+    <div>
+        <input type="checkbox" id="doubel" name="addition">
+        <label for="doubel">미트2배</label>
+        <input type="checkbox" id="eggMayo" name="addition">
+        <label for="eggMayo">에그마요</label>
+        <input type="checkbox" id="bacon" name="addition">
+        <label for="bacon">베이컨</label>
+        <input type="checkbox" id="omelet" name="addition">
+        <label for="omelet">오믈렛</label>
+        <br>
+        <input type="checkbox" id="eggSlice" name="addition">
+        <label for="eggSlice">에그 슬라이스</label>
+        <input type="checkbox" id="avocado" name="addition">
+        <label for="avocado">아보카도</label>
+        <input type="checkbox" id="peprroni" name="addition">
+        <label for="peprroni">페퍼로니</label>
+        <input type="checkbox" id="cheezDouble" name="addition">
+        <label for="cheezDouble">치즈추가 </label>
+    </div>
+    <hr>
+    <!--채소-->
+    <p>원하는 채소 선택</p>
+    <div>
+        <input type="checkbox" id="lettus" checked value="양상추">
+        <label for="lettus">양상추</label>
+        <input type="checkbox" id="tomato" checked>
+        <label for="tomato">토마토</label>
+        <input type="checkbox" id="cucumbers" checked>
+        <label for="cucumbers">오이</label>
+        <input type="checkbox" id="onions" checked>
+        <label for="onions">양파</label>
+        <input type="checkbox" id="pickles" checked>
+        <label for="pickles">피클</label>
+        <input type="checkbox" id="peppers" checked>
+        <label for="peppers">파프리카</label>
+        <input type="checkbox" id="olives" checked>
+        <label for="olives">올리브</label>
+        <input type="checkbox" id="jalapenos" checked>
+        <label for="jalapenos">할라피뇨</label>
+        <input type="checkbox" id="avocados" checked>
+        <label for="avocados">아보카도</label>
+    </div>
+    <hr>
+    <!--소스-->
+    <p>소스 선택</p>
+    <div>
+        <input type="checkbox" id="sauce1" value="렌치">
+        <label for="">렌치</label>
+        <input type="checkbox" id="sauce2">
+        <label for="">스위트 어니언</label>
+        <input type="checkbox" id="sauce3">
+        <label for="">마요네즈</label>
+        <input type="checkbox" id="sauce4">
+        <label for="">스위트 칠리</label>
+        <input type="checkbox" id="sauce5">
+        <label for="">스모크 바베큐</label>
+        <input type="checkbox" id="sauce6">
+        <label for="">핫 칠리</label>
+        <input type="checkbox" id="sauce7">
+        <label for="">허니 머스타드</label>
+        <input type="checkbox" id="sauce8">
+        <label for="">사우스웨스트 치폴레</label>
+        <input type="checkbox" id="sauce9">
+        <label for="">홀스래디쉬</label>
+        <input type="checkbox" id="sauce10">
+        <label for="">머스타드</label>
+        <br>
+        <input type="checkbox" id="sauce11">
+        <label for="">엑스트라 버진 오일</label>
+        <input type="checkbox" id="sauce12">
+        <label for="">와인 식초</label>
+        <input type="checkbox" id="sauce13">
+        <label for="">소금</label>
+        <input type="checkbox" id="sauce14">
+        <label for="">후추</label>
+    </div>
+
+    <button onclick="orderMenu()" id="order">주문 완료</button>
+    <hr>
+    <!--완성-->
+
+    <h1 id="h">주문 내역</h1>
+    <ul>
+        <li id="menu1"></li>
+        <li id="menu2"></li>
+        <li id="menu3"></li>
+        <li id="menu4"></li>
+        <li id="menu5"></li>
+    </ul>
+
 
     <script>
+        function orderMenu() {
+            // 빵 종류 선택
+            const bread = document.getElementById("bread").selectedIndex;
+            const selectBread = document.getElementById("bread").options[bread].value;
+            document.getElementById("menu1").innerText = `빵 종류 : ${selectBread}`;
 
+            //치즈 종류 선택
+            const cheez = document.getElementById("cheez").selectedIndex;
+            const selectCheez = document.getElementById("cheez").options[cheez].value;
+            document.getElementById("menu2").innerText = `치즈 종류 : ${selectCheez}`;
+
+            //재료 추가
+            let addOption = [];
+            const plusOption = document.getElementsByName("addition");
+            document.getElementById("menu3").innerText = `선택재료 : ${addOption.join()}`;
+        }
     </script>
 </body>
+
 </html>
