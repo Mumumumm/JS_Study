@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center;">
+    <video src="./image_eevee/eevee.mp4" id="video"></video> <br>
+    <input type="button" value="Change" onclick="changeImage()">
+    <script>
+        let toggle = 1;
+        function changeImage() {
+            if(++toggle % 2 === 0){
+                document.getElementById("video").src='./image_eevee/eevee.mp4'
+            }else{
+                let change = Math.floor(Math.random() * 8)+1;
+                document.getElementById("video").src=`./image_eevee/evolution${change}.mp4`
+            }
+        }
+
+
+
+
+
+
+        // let change = Math.floor(Math.random() * 2)
+        // document.getElementById("video").src = `'./image_eevee/evolution${change}.mp4'`;
+
+    </script>
+</body>
+
+</html>

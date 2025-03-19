@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!--라디오-->
+    <input type="radio" name="color" value="Red" >Red<br>
+    <input type="radio" name="color" value="Green">Green<br>
+    <input type="radio" name="color" value="Blue">Blue<br>
+    <input type="button" value="choice" onclick="getRadio()"><hr>
+    <h2 id="result"></h2>
+
+    <!--드롭 박스-->
+    <select id="myOption">
+        <option value="멍멍">개</option>
+        <option value="야옹">고양이</option>
+        <option value="깡총">토끼</option>
+        <option value="스으으으">뱀</option>
+    </select><br>
+    <input type="button" value="선택" onclick="getSelect()">
+    <h2 id="dropBox"></h2>
+
+
+    <script>
+        // 라디오
+        function getRadio(){
+            let color = document.querySelectorAll("[type='radio']");
+            for(let i = 0 ; i < color.length; i++){
+                if(color[i].checked){
+                    document.getElementById("result").innerText=`${color[i].value}`;
+                    break;
+                }
+            }
+        }
+
+        //--------------------------------------------------------------------------
+        // 드롭박스
+        function getSelect(){
+            const index = document.getElementById("myOption").selectedIndex; // myOption요소의 인덱스 즉 select 안 option 인덱스 번호를 가져온다
+            const st = document.getElementById("myOption").options[index].value; // option이라는게 있고 거기에 대입한 index를 [] 에 넣어 그 value값을 가져온다
+            document.getElementById("dropBox").innerHTML = st;
+        }
+        
+    </script>
+</body>
+</html>

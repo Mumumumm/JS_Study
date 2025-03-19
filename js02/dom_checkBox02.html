@@ -13,29 +13,31 @@
             display: inline-block;
             margin: 5px;
         }
-
     </style>
 </head>
 
 <body>
-        <input class="op" id="op1" type="checkbox" name="addPlus" value="500" onclick="addOptions()"> <label for="op1"
-            class="plus">휘핑추가 500원</label><br>
-        <input class="op" id="op2" type="checkbox" name="addPlus" value="500" onclick="addOptions()"> <label for="op2"
-            class="plus">샷 추가 500원</label><br>
-        <input class="op" id="op3" type="checkbox" name="addPlus" value="0" onclick="addOptions()"> <label for="op3"
-            class="plus">연하게 0원</label><br>
-        <input class="op" id="op4" type="checkbox" name="addPlus" value="500" onclick="addOptions()"> <label for="op4"
-            class="plus">시럽 추가 500원</label><br>
+    <input class="op" id="op1" type="checkbox" name="addPlus" value="500" onclick="addOptions('op1')">
+    <label for="op1" class="plus">휘핑추가 500원</label><br>
 
-    <!-- <input type="button" onclick="getAddPuls()" value="Add"> -->
+    <input class="op" id="op2" type="checkbox" name="addPlus" value="500" onclick="addOptions('op2')" >
+    <label for="op2" class="plus">샷 추가 500원</label><br>
+
+    <input class="op" id="op3" type="checkbox" name="addPlus" value="0" onclick="addOptions('op3')">
+    <label for="op3" class="plus">연하게 0원</label><br>
+
+    <input class="op" id="op4" type="checkbox" name="addPlus" value="500" onclick="addOptions('op4')">
+    <label for="op4" class="plus">시럽 추가 500원</label><br>
+
+    <!-- <input type="button" onclick="getAddPuls()" value="Add">  (1)-->
     <input type="button" onclick="reset()" value="reset">
 
 
-    <p id="addResult"></p>
+    <p id="addResult">추가금액 : 0원</p>
 
     <!---------------------------------------------------------------------------------------------------------------------------------------------->
     <script>
-        // 합계 결과 보기
+        // 합계 결과 보기 (1)
 
         // function getAddPuls() { // 함수 생성
         //     let sum = 0; // 체크된 값을 저장하기 위한 변수
@@ -62,16 +64,54 @@
             document.getElementById("addResult").innerHTML = `추가금액 : ${sum}원`;
         }
 
+        //---------------------------------------------------------------------------------------------------------
+
         // 리셋 버튼 만들기
         function reset() {
             const sum = 0;
-            const add = document.getElementsByName("addPlus");
-            for (let i = 0; i < add.length; i++) {
-                add[i].checked = false;
+            const add = document.getElementsByName("addPlus"); // Element s 가 되었기 때문에 배열화 된다
+            for (let i = 0; i < add.length; i++) { // 배열화 된 것을 반복시켜 add[i] 번째를 반복시켜 모두 선택 
+                add[i].checked = false; // 체크를 거짓으로 대입해 해제 할 수 있다
             }
-            document.getElementById("addResult").innerHTML = `초기화 추가금액 : ${sum}원`;
+            document.getElementById("addResult").innerHTML = `추가금액 : ${sum}원`;
         }
 
+        //---------------------------------------------------------------------------------------------------------
+
+        // //id로 가져오기
+        // let sumId = 0;
+        // function addOptions(id) {
+
+        //     const add = document.getElementById(id);
+        //     if (add.checked) {
+        //         sumId = sumId + parseInt(add.value);
+        //     } else {
+        //         sumId = sumId - parseInt(add.value);
+        //     }
+        //     document.getElementById("addResult").innerHTML = `추가금액 : ${sumId}원`;
+        // }
+
+
+        //---------------------------------------------------------------------------------------------------------
+
+        // 처음부터 체크가 되어 있다면? 
+        // 이부분 수정 못했습니다 카톡 보기
+        // let sum = 0;
+        // const items = document.getElementsByName("addPlus");
+        // for(let item of items){
+        //     sumId = sumId + parseInt(item.value);
+        // }
+        
+
+        // function addOptions(id) {
+        //     const add = document.getElementById(id);
+        //     if (add.checked) {
+        //         sum = sum + parseInt(add.value);
+        //     } else {
+        //         sum = sum - parseInt(add.value);
+        //     }
+        //     document.getElementById("addResult").innerHTML = `추가금액 : ${sum}원`;
+        // }
     </script>
 </body>
 
