@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+            // this는 같은 객체 소속 부를때
+            id: "202503190001",
+            name: "김준홍",
+            scores: [],
+
+            addScore(score){
+                this.scores.push(score); // scores 배열에 들어갈것
+            },
+
+            getTotal(){
+                let sum = 0;
+                for(let s of this.scores){
+                    sum = sum + s.score;
+                }
+                // for(let i = 0; i <this.scores.length; i++){
+                //     sum = sum + this.scores.length[i].score;
+                // }
+                return sum;
+            },
+
+            getAverage(){
+                let sum = this.getTotal();
+                let avg = sum / this.scores.length;
+                return avg;
+            },
+        };
+
+        student.addScore({subject: "JavaScript", score: 80});
+        student.addScore({subject: "Html", score: 79});
+        student.addScore({subject: "Css", score: 90});
+        student.addScore({subject: "React", score: 100});
+
+        document.write(`총점 : ${student.getTotal()} <br>`);
+        document.write(`평균 : ${student.getAverage()}`);
+    </script>
+</body>
+</html>
