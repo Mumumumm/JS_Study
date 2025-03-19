@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .plus {
+            background-color: azure;
+            border: 1px solid #50c0f5;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+        <input class="op" id="op1" type="checkbox" name="addPlus" value="500" onclick="addOptions()"> <label for="op1"
+            class="plus">휘핑추가 500원</label><br>
+        <input class="op" id="op2" type="checkbox" name="addPlus" value="500" onclick="addOptions()"> <label for="op2"
+            class="plus">샷 추가 500원</label><br>
+        <input class="op" id="op3" type="checkbox" name="addPlus" value="0" onclick="addOptions()"> <label for="op3"
+            class="plus">연하게 0원</label><br>
+        <input class="op" id="op4" type="checkbox" name="addPlus" value="500" onclick="addOptions()"> <label for="op4"
+            class="plus">시럽 추가 500원</label><br>
+
+    <!-- <input type="button" onclick="getAddPuls()" value="Add"> -->
+    <input type="button" onclick="reset()" value="reset">
+
+
+    <p id="addResult"></p>
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------->
+    <script>
+        // 합계 결과 보기
+
+        // function getAddPuls() { // 함수 생성
+        //     let sum = 0; // 체크된 값을 저장하기 위한 변수
+
+        //     const adds = document.getElementsByName("addPlus"); // name이 addPlus인 요소를 adds에 대입
+
+        //     for (let i = 0; i < adds.length; i++) { // adds에 저장된값 길이보다 작다면 실행, i++ 하면서
+        //         if (adds[i].checked) { // 조건을 건다 i 번째에 check가 되어있는지
+        //             sum = sum + parseInt(adds[i].value); // check가 되어있다면 해당 i번째 adds의 value값을 sum에 저장한다
+        //         }
+        //     }
+        //     document.getElementById("addResult").innerHTML = `추가금액: ${sum}원` // id가 result인 요소에 출력
+        // }
+
+        // 실시간 합계 구하기
+        function addOptions() {
+            let sum = 0;
+            const add = document.getElementsByName("addPlus");
+            for (let i = 0; i < add.length; i++) {
+                if (add[i].checked) {
+                    sum = sum + parseInt(add[i].value);
+                }
+            }
+            document.getElementById("addResult").innerHTML = `추가금액 : ${sum}원`;
+        }
+
+        // 리셋 버튼 만들기
+        function reset() {
+            const sum = 0;
+            const add = document.getElementsByName("addPlus");
+            for (let i = 0; i < add.length; i++) {
+                add[i].checked = false;
+            }
+            document.getElementById("addResult").innerHTML = `초기화 추가금액 : ${sum}원`;
+        }
+
+    </script>
+</body>
+
+</html>
