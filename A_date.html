@@ -38,14 +38,14 @@
 
             const today = new Date(); // today 현재 실시간 Date 정보를 대입
             const inputDate = new Date(year, month -1, day) // 상단에 있는 정보를 input 정보를 inputDate에 대입
-            const diffToday = today - inputDate // diffToday에 현재 실시간(today) - 입력한 정보 시간(inputDate) 차이를 대입
-            const result = Math.floor(diffToday / 1000 * 60 * 60 *24); // diffToday(차이값)을 하루로 나누고 대입 floor로 소수점 제거
+            const diffToday = today - inputDate; // diffToday에 현재 실시간(today) - 입력한 정보 시간(inputDate) 차이를 대입
+            const daydiff = Math.floor(diffToday / (1000 * 60 * 60 *24)); // diffToday(차이값)을 하루로 나누고 대입 floor로 소수점 제거
 
             document.getElementById("today").innerHTML=`${today.toLocaleString()}`;
             if(diffToday >= 0){
-                document.getElementById("result").innerHTML=`${diffToday}일 전`;
+                document.getElementById("result").innerHTML=`${daydiff}일 전`;
             }else{
-                document.getElementById("result").innerHTML=`${-(diffToday)}일 남았음`;
+                document.getElementById("result").innerHTML=`${-(daydiff)}일 남았음`;
             }
         }
     </script>
