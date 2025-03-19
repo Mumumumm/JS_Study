@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>p & Noclass</p>
+    <p class="elms"> p class ="elm" 1</p>
+    <p class="elms"> p class ="elm" 2</p>
+    <p id="ide">p id="ide"</p>
+    <hr>
+    <script>
+        // Elements 는 배열로 반환 s <-
+        const emls = document.getElementsByClassName("elms"); // 클래스가 elm 인 요소
+        for(let i = 0; i < emls.length; i++){
+            document.write(`ByClassName: emls[${i}]) = ${emls[i].innerText}<br>`);
+        }
+        document.write("<hr>");
+        //-------------------------------------------------------------------------------
+
+        const tags = document.getElementsByTagName("p"); // 태그가 p인 요소
+        for(let i = 0; i < tags.length; i++){
+            document.write(`ByTagName P: Tags[${i}] = ${tags[i].innerText}<br>`);
+        }
+
+        document.write("<hr>");
+        //-------------------------------------------------------------------------------
+
+        const dots = document.querySelectorAll(".elms") // 클래스(.)가 elms인 요소
+        for(let i = 0; i < dots.length; i++){
+            document.write(`dots[${i}] = ${dots[i].innerText}<br>`);
+        }
+        document.write("<hr>");
+        //-------------------------------------------------------------------------------
+
+        const hash =  document.querySelectorAll("#ide"); // id(#)가 ide인 요소
+        for(let i = 0; i < hash.length; i++){
+            document.write(`hash[${i}] = ${hash[i].innerText}<br>`);
+        }
+
+        document.write("<hr>");
+        //-------------------------------------------------------------------------------
+    </script>
+</body>
+</html>

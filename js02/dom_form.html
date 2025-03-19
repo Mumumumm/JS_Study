@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="myForm">
+        <input type="text" name="userId" required placeholder="아이디 입력">
+        <input type="password" name="userPw" required placeholder="비밀번호 입력">
+        <input type="submit" value="로그인" onclick="getInput()">
+    </form>
+    <br><br><br>
+
+    <textarea id="input" rows="10" cols="80"></textarea><br>
+    <input type="button" value="Get Text" onclick="getTextarea()"><hr>
+    <p id="result"></p>
+    <!------------------------------------------------------------------------------>
+    <script>
+        function getInput() {  // form태그 한정 가능한 것
+            const id = document.myForm.userId;
+            const pw = document.myForm.userPw;
+
+            if(pw.value.length <= 4){
+                alert(`${id.value}님 비밀번호는 4자 이상입니다`);
+            }
+            else{
+                alert(`${id.value}님 환영합니다`);
+            }
+        }
+
+        //----------------------------------------------------------------------------
+
+        function getTextarea(){
+            const st = document.getElementById("input").value;
+            document.getElementById("result").innerText = st; // text로 하면 텍스트 그대로 반영 HTML로 하면 문서대로 반영해서 줄바꿈 적용 안됌
+        }
+        
+    </script>
+</body>
+
+</html>
