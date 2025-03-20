@@ -14,7 +14,6 @@
             padding: 20px;
             box-shadow: inset 5px 7px 7px;
             background: linear-gradient(gray, rgb(255 255 255));
-
         }
 
         #changeButton {
@@ -28,9 +27,8 @@
 </head>
 
 <body style="text-align: center;">
-    <video src="./image_eevee/eevee.mp4" id="video" loop autoplay></video> <br>
+    <video src="./image_eevee/eevee.mp4" id="video" autoplay></video> <br>
     <input type="button" value="Change" onclick="changeImage()" id="changeButton">
-
     <script>
         let toggle = 1;
         function changeImage() {
@@ -42,6 +40,7 @@
             }
         }
 
+        // 사용자지정 객체로 종족값 추가하기
     </script>
 </body>
 

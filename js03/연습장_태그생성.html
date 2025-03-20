@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <h3>create ElementById</h3>
+    <input type="button" value="추가하기"
+        onclick="addNode('https://developer.mozilla.org/ko/docs/Web/API/Document/createElement')">
+
+    <script>
+        function addNode(t) { // 매개변수에 t를 넣는다
+            let node1 = document.createElement("hr");
+            let node2 = document.createElement("a");
+            node2.href = t; // t 매개변수가 href = 다음 내용으로 입력이 되어 링크 연결이된다
+            node2.innerText = t; // 위에가 링크라면 이쪽은 텍스트를 적어낸다
+
+            document.body.appendChild(node1); // body의 자식요소로 hr 태그를 사용
+            document.body.appendChild(node2); // body의 자식요소로 a 태그를 사용
+        }
+    </script>
+
 </body>
+
 </html>

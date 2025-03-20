@@ -12,7 +12,7 @@
     <img src="./media/africa.jpg" id="img">
     <button type="button" onclick="back()">이전</button>
     <button type="button" onclick="next()">다음</button>
-    background
+    <button type="button" onclick="stop()">멈춤</button>
 
 
     <script>
@@ -23,7 +23,7 @@
             './media/africa2.jpg', // 인덱스번호 2
             './media/africa3.jpg', // 인덱스번호 3
         ];
-
+        let intervalID = setInterval(next, 5000); // 누르지 않더라도 자동 슬라이드쇼
         function next() {
             index = (index + 1) % images.length; // 12301230 오름차순
             document.getElementById("img").src = images[index];
@@ -34,7 +34,10 @@
             document.getElementById("img").src = images[index];
         }
 
-        setInterval() // 누르지 않더라도 자동 슬라이드쇼
+        function stop() {
+            clearInterval(intervalID);
+        }
+
 
     </script>
 </body>
