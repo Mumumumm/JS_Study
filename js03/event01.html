@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #rotateimg {
+            transition: transform 0.25s;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>HEROS OF STOME</h4>
+    <img src="./image/heoes.jfif" id="rotateimg">
+
+    <script>
+        let deg = 0;
+        let image = document.getElementById("rotateimg");
+        image.onclick = () => { // 화살표 함수 사용해보기
+            deg = deg + 360;
+            image.style.transform = "rotate(" + deg + "deg)";
+        }
+
+        // 회전을 할 때는 transform 속성과 rotate() 함수를 사용합니다.
+    </script>
+</body>
+
+</html>

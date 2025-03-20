@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            background-image: url(./image/cockieBack.jfif);
+        }
+
+        #followMouse {
+            transition: transform 1 linear;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./image/cockie.gif" id="followMouse">
+
+    <script>
+        let img = document.getElementById("followMouse");
+        document.onmousemove = updateImage;
+
+        function updateImage(event) {
+            const X = event.clientX;
+            const Y = event.clientY;
+            img.style.transform = `translate(${X}px, ${Y}px)`;
+        }
+
+
+
+
+        //translate 좌표를 x y만큼 움직인다
+    </script>
+</body>
+
+</html>

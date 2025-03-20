@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #video{
+        #video {
             width: 300px;
             border: 5px solid gray;
             border-radius: 10px;
             box-sizing: 300px;
             padding: 20px;
             box-shadow: inset 5px 7px 7px;
-            background: linear-gradient(gray,rgb(255 255 255));
-            
+            background: linear-gradient(gray, rgb(255 255 255));
+
         }
-        #changeButton{
+
+        #changeButton {
             margin-top: 10px;
             font-size: 20px;
             border-radius: 15px;
@@ -29,19 +30,46 @@
 <body style="text-align: center;">
     <video src="./image_eevee/eevee.mp4" id="video" loop autoplay></video> <br>
     <input type="button" value="Change" onclick="changeImage()" id="changeButton">
-    <div>여기에 속성값이 뜰 자리
-        <table>
-
+        <table>여기에 속성값이 뜰 자리
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
         </table>
-    </div>
     <script>
         let toggle = 1;
         function changeImage() {
-            if(++toggle % 2 === 0){ // toggle을 먼저 + 한뒤 2로 나머지를 구했을때 0이라면
-                document.getElementById("video").src='./image_eevee/eevee.mp4' // id video인 요소에 비디오src를 불러온다
-            }else{
-                let change = Math.floor(Math.random() * 8)+1; // 랜덤 함수를 적용하는데 0은 나오면 안되기때문에 + 1 이것을 change에 대입
-                document.getElementById("video").src=`./image_eevee/evolution${change}.mp4` // change를 evolution 에 숫자에 넣어 랜덤 이미지가 나올수 있도록 하기
+            if (++toggle % 2 === 0) { // toggle을 먼저 + 한뒤 2로 나머지를 구했을때 0이라면
+                document.getElementById("video").src = './image_eevee/eevee.mp4' // id video인 요소에 비디오src를 불러온다
+            } else {
+                let change = Math.floor(Math.random() * 8) + 1; // 랜덤 함수를 적용하는데 0은 나오면 안되기때문에 + 1 이것을 change에 대입
+                document.getElementById("video").src = `./image_eevee/evolution${change}.mp4` // change를 evolution 에 숫자에 넣어 랜덤 이미지가 나올수 있도록 하기
             }
         }
 
