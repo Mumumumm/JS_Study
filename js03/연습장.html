@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form id="myFrom">
+    <form id="myFrom" name="form">
         <div>
             <label for="myName">이름</label>
             <input type="text" name="name" id="myName" placeholder="이름을 적어주세요">
@@ -17,9 +17,21 @@
             <label for="myCheck">동의 확인 여부</label>
         </div>
         <input type="submit" value="확인" >
-        <p id="showName"></p>
-        <p id="showResult"></p>
+        <p id="showName">성함 :</p>
+        <p id="showResult">결과 :</p>
     </form>
+
+    <script>
+        document.form.addEventListener("submit",(e)=>{ // e가 가르키는 것은 form, form태그의 name을 이벤트 리스너로 연결해야한다.
+            event.preventDefault(); // submit 할 from에 현재 atction이 없으므로 새로고침을 못하게 설정
+
+            let agree = e.target.check.checked;
+            document.getElementById("showResult").innerText = `결과 : ${agree ? "동의합니다" : "동의안합니다"}`;
+
+            let myName = e.target.name.value;
+            document.getElementById("showName").innerText = `이름 : ${myName}`;
+        })
+    </script>
 </body>
 
 </html>
