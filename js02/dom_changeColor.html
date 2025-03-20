@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        let count = 1;
+        let intervalId = setInterval(changeColor, 250);
+
+        function changeColor() {
+            if (++count > 50) {
+                clearInterval(intervalId);
+            }
+            for (let i = 0; i < 6; i++) {
+                color = color + letters[Math.floor(Math.random() * 16)];
+            }
+            document.getElementById("box").style.backgroundColor = color;
+            document.getElementById("box").style.borderRadius = `${count}%`;
+            color = "#";
+
+
+        }
+    </script>
+</body>
+
+</html>

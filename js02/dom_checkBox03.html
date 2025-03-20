@@ -11,6 +11,11 @@
             margin-top: 15px;
             border-radius: 5px;
         }
+        ul > li{
+            list-style: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 
@@ -86,35 +91,64 @@
     <!--소스-->
     <p>소스 선택</p>
     <div>
-        <input type="checkbox" id="sauce1" value="렌치">
-        <label for="">렌치</label>
-        <input type="checkbox" id="sauce2">
-        <label for="">스위트 어니언</label>
-        <input type="checkbox" id="sauce3">
-        <label for="">마요네즈</label>
-        <input type="checkbox" id="sauce4">
-        <label for="">스위트 칠리</label>
-        <input type="checkbox" id="sauce5">
-        <label for="">스모크 바베큐</label>
-        <input type="checkbox" id="sauce6">
-        <label for="">핫 칠리</label>
-        <input type="checkbox" id="sauce7">
-        <label for="">허니 머스타드</label>
-        <input type="checkbox" id="sauce8">
-        <label for="">사우스웨스트 치폴레</label>
-        <input type="checkbox" id="sauce9">
-        <label for="">홀스래디쉬</label>
-        <input type="checkbox" id="sauce10">
-        <label for="">머스타드</label>
-        <br>
-        <input type="checkbox" id="sauce11">
-        <label for="">엑스트라 버진 오일</label>
-        <input type="checkbox" id="sauce12">
-        <label for="">와인 식초</label>
-        <input type="checkbox" id="sauce13">
-        <label for="">소금</label>
-        <input type="checkbox" id="sauce14">
-        <label for="">후추</label>
+        <ul>
+            <li>
+                <input type="checkbox" id="sauce1" value="렌치">
+                <label for="sauce1">렌치</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce2" value="">
+                <label for="sauce2">스위트 어니언</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce3" value="">
+                <label for="sauce3">마요네즈</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce4" value="">
+                <label for="sauce4">스위트 칠리</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce5" value="">
+                <label for="sauce5">스모크 바베큐</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce6" value="">
+                <label for="sauce6">핫 칠리</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce7" value="">
+                <label for="sauce7">허니 머스타드</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce8" value="">
+                <label for="sauce8">사우스웨스트 치폴레</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce9" value="">
+                <label for="sauce9">홀스래디쉬</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce10" value="">
+                <label for="sauce10">머스타드</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce11" value="">
+                <label for="sauce11">엑스트라 버진 오일</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce12" value="">
+                <label for="sauce12">와인 식초</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce13" value="">
+                <label for="sauce13">소금</label>
+            </li>
+            <li>
+                <input type="checkbox" id="sauce14" value="">
+                <label for="sauce14">후추</label>
+            </li>
+        </ul>
     </div>
 
     <button onclick="orderMenu()" id="order">주문 완료</button>

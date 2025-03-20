@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="slide">이미지 슬라이드</h1>
+    <img src="./media/africa.jpg" id="img">
+    <button type="button" onclick="back()">이전</button>
+    <button type="button" onclick="next()">다음</button>
+    background
+
+
+    <script>
+        let index = 0;
+        let images = [
+            './media/africa.jpg', // 인덱스번호 0
+            './media/africa1.jpg', // 인덱스번호 1
+            './media/africa2.jpg', // 인덱스번호 2
+            './media/africa3.jpg', // 인덱스번호 3
+        ];
+
+        function next() {
+            index = (index + 1) % images.length; // 12301230 오름차순
+            document.getElementById("img").src = images[index];
+        }
+
+        function back() {
+            index = (index - 1 + 4) % images.length; // 32103210 내림차순
+            document.getElementById("img").src = images[index];
+        }
+
+        setInterval() // 누르지 않더라도 자동 슬라이드쇼
+
+    </script>
+</body>
+
+</html>

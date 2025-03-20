@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="target">
+        <p id="p1">첫 번째 노드</p>
+        <p id="p2">두 번째 노드</p>
+        <p id="p3">세 번째 노드</p>
+    </div>
+    <button onclick="removeNode()">삭 제</button>
+
+
+    <script>
+        let num = 1;
+        function removeNode(){
+            const parent = document.getElementById("target");
+            const child = document.getElementById(`p${num}`) //아이디가 p의 전역변수 num번째
+            parent.removeChild(child) // child 에 대입된 문서를 삭제
+            num++ // 한 번 실행하고 전역변수에 있는 num 에 1+
+        }
+    </script>
+</body>
+
+</html>
