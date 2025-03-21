@@ -23,24 +23,36 @@
             { name: "손주영", position: "투수" },
             { name: "박동원", position: "포수" },
         ];
-        // 외부에 둬야 playrs 배열을 불러올수 있다 처음부터
-        const child = document.createElement("li"); // li를 먼저생성
-        document.getElementById("list").appendChild(child); // child를 list의 자식으로 넣는다 ul > li
-        let count = 0;
-        for (let i = count; i < playrs.length; i++) {
-            child.innerText = playrs[count].name +" ("+ playrs[count].position + ")";
-            count++
-        }
 
+        // // li 리스트 생성
+        // for (let list of playrs) {
+        //     const child = document.createElement("li"); // li를 먼저생성
+        //     child.innerText = list.name + list.position; //
+        //     document.getElementById("list").appendChild(child); // child를 list의 자식으로 넣는다 ul > li
+        // }
+
+        
+
+        // 검색 필터
         document.getElementById("search").addEventListener("input", (s) => {
+            document.getElementById("list").innerHTML =""; // 입력값 초기화
 
+            const search = document.getElementById("search").value; // 사용자가 입력한 값 가져오기
+            for(let playName of playrs){ // playrs의 배열을 탐색한다
+                if(playName.name.includes(search)){ 
+                    // 4. 리스트 태그를 생성하자 `document.createElement("li")`
+                    const li = document.createElement("li")
+                    // 4. 포함되어 있다면 해당하는 선수의 이름과 포지션을 리스트 태그에 넣자 `.innerText`
+                    li.innerText = playName.name + playName.position;
+                    // 4. ul 자식으로 넣자 `appendChild`
+                    document.getElementById("list").appendChild(li);
+                    // 5. ul 태그의 자식으로 추가하자
+                }
+            }
 
         });
 
     </script>
-
-
-
 
 
 
