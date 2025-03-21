@@ -25,12 +25,12 @@
         ];
         let intervalID = setInterval(next, 5000); // 누르지 않더라도 자동 슬라이드쇼
         function next() {
-            index = (index + 1) % images.length; // 12301230 오름차순
+            index = (index + 1) % images.length; // 012301230 오름차순
             document.getElementById("img").src = images[index];
         }
 
         function back() {
-            index = (index - 1 + 4) % images.length; // 32103210 내림차순
+            index = (index - 1 + 4) % images.length; // 032103210 내림차순
             document.getElementById("img").src = images[index];
         }
 

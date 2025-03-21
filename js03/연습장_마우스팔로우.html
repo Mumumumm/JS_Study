@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>달려보자구</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            border-radius: 100px;
+            transition: transform 1 linear;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="ball"></div>
+
+    <script>
+        let follw = document.getElementById("ball");
+        document.onmousemove = follwBall;
+
+        function follwBall() {
+            const X = event.clientX;
+            const Y = event.clientY;
+            follw.style.transform = `translate(${X}px, ${Y}px)`;
+        }
+    </script>
 </body>
 </html>

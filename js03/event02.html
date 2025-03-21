@@ -20,9 +20,14 @@
     <script>
         let image = document.getElementById("rotateimg");
         // 화살표 함수로 function 과 변수 이름 빼기
-        image.addEventListener("mouseover",()=>{image.style.transform = "scale(0,0)"});
+        // 이벤트리스너에 ("이벤트", 함수를 정의한 활용) 그중에서 화살표 함수
+        image.addEventListener("mouseover",()=>{image.style.transform = "scale(0,0)"}); // 이벤트이름을 넣기 "이 안에"
         image.addEventListener("mouseout",()=>{image.style.transform = "scale(2,2)"});
 
+        // 이름이 있는 함수 정의 활용
+        // image.addEventListener("mouseover",function event (){
+        //     image.style.transform = "scale(0,0)"
+        // });
     </script>
 </body>
 </html>

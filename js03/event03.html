@@ -34,10 +34,22 @@
             img.style.transform = `translate(${X}px, ${Y}px)`;
         }
 
+        // img.style.transform = transelate(Xpx,Ypx); 라고 했을경우
 
+        // 템플릿 리터럴을 사용하지 않고 단순히 translate(Xpx, Ypx)처럼 작성하면 정상 작동하지 않습니다. 
+        // 이유는 Xpx와 Ypx가 자바스크립트에서 변수로 해석되지 않고 문자 그대로 사용되기 때문입니다.
 
+        // 변수 X와 Y에 저장된 값을 px 단위로 변환하려면 문자열로 변환해줄 필요가 있습니다. 
+        // 템플릿 리터럴 대신 문자열 연결을 사용하여 다음과 같이 작성할 수 있습니다:
 
-        //translate 좌표를 x y만큼 움직인다
+        // img.style.transform = 'translate(' + X + 'px, ' + Y + 'px)';
+        // 이렇게 하면 X와 Y의 값이 각각 픽셀 값으로 변환되어 CSS의 transform: translate() 속성에 정상적으로 적용됩니다.
+
+        // 정리
+        // 템플릿 리터럴(`)을 사용하지 않고도 문자열 연결 방식(+)을 통해 동일한 결과를 얻을 수 있습니다. 
+        // 하지만 단순히 translate(Xpx, Ypx)로 작성하면 자바스크립트가 X와 Y를 변수로 인식하지 못하므로 작동하지 않습니다.
+
+        // translate 좌표를 x y만큼 움직인다
     </script>
 </body>
 

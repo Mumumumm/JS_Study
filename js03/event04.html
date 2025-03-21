@@ -34,7 +34,8 @@
     </form>
 
     <script>
-        document.info.addEventListener("submit", forminfo); // ("어떤이벤트", 정의된함수)어떤이벤트가 발생하면 정의된 함수를 실행
+        document.forms['info'].addEventListener("submit", forminfo); // ("어떤이벤트", 정의된함수)어떤이벤트가 발생하면 정의된 함수를 실행
+        //form에 ['form name']을 적기 그다음 .
 
         // 이름있는 정의한 함수 이벤트 리스너에 들어갈것
         function forminfo() {
@@ -55,6 +56,7 @@
 
             // if문 3항 연산자로 활용하기
             // let agree = e.target.checking.checked
+            // document.getElementById("agreement").innerText = "약관 동의 : + agree"
             // document.getElementById("agreement").innerText = `약관동의 : ${agree ? "동의함" : "동의하지않음"}`
         }
     </script>
