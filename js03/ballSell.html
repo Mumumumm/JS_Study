@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product-container{display: flex; gap: 20px;}
+        .product-card{
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>제품 목록</h2>
+    <div class="product-container" id="productContainer"></div>
+
+    <script>
+        const product = [ // 배열리스트 
+            {name: "몬스터볼", price: 1500, image: "./ball/monsterBall.webp"},
+            {name: "수퍼볼", price: 2000, image: "./ball/GreatBall.webp"},
+            {name: "울트라볼", price: 3000, image: "./ball/UltraBall.webp"},
+            {name: "마스터볼", price: 1500000, image: "./ball/MasterBall.webp"},
+            {name: "사파리볼", price: 500, image: "./ball/SafariBall.webp"},
+            {name: "컴퍼티션볼", price: 2300, image: "./ball/SportBall.webp"},
+            {name: "레벨볼", price: 1800, image: "./ball/LevelBall.webp"},
+            {name: "프렌드볼", price: 800, image: "./ball/FriendBall.webp"},
+        ];
+
+        const container = document.getElementById("productContainer"); // 안쪽 div가 들어갈, 바깥쪽 div를 가져와 container에 대입
+        product.forEach((info)=>{ // 화살표 함수 // forEach 가 각배열을 한 번씩 넣어준다
+            const ballCard = document.createElement("div"); // 비어있는 div 생성
+            ballCard.className = "product-card"; // ballCard에 클래스명을 넣어주기 위함
+
+            ballCard.innerHTML = `
+            <img src="${info.image}" width="100px" height="100px">
+            <h3> ${info.name} </h3>
+            <p>가격: ${info.price.toLocaleString()}원</p>
+            `; // div 하나 하나에 들어갈 내용들 // info. 으로 적은건 product정보를 info가 받고 있어서
+
+            container.appendChild(ballCard);
+        });
+
+
+
+
+        // fot(let card of product){
+        //     const ballCard = document.createElement("div");
+        //     ballCard.className = "product-card"; 
+
+        //     ballCard.innerHTML = `
+        //     <img src="${info.image}" width="100px" height="100px">
+        //     <h3> ${info.name} </h3>
+        //     <p>가격: ${info.price.toLocaleString()}원</p>
+        //     `;
+
+        //     container.appendChild(ballCard);
+        // }
+    </script>
+</body>
+</html>

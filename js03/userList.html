@@ -16,25 +16,25 @@
 
     <script>
         //전역변수 
-        let list = [
+        let list = [ // 객체 정보
             { name: '김철수씨', age: 22 },
             { name: '신짱구씨', age: 23 },
             { name: '훈발놈씨', age: 24 },
             { name: '돌맹구씨', age: 25 },
             { name: '병유리씨', age: 26 },
         ];
-        let count = 0; // 
 
-        document.getElementById("add").addEventListener("click", (u) => {
-            if (count < list.length) {
-                let node1 = document.createElement("li");
+        let count = 0; // 인덱스 번호가 되어줄 변수
+        document.getElementById("add").addEventListener("click", (u) => { // add id가 click 될때 이 이벤트를 발생 // u는 id가 "add"인 요소를 지정하기 위해 사용
+            if (count < list.length) { // 0 이 list의 길이(5)보다 작다면 실행
+                let node1 = document.createElement("li"); // li태그를 node1 에 
                 list[count];
                 let person = list[count];
-                node1.innerText = person.name + "(" + person.age + "세)";
+                node1.innerText = person.name + "(" + person.age + "세)"; // innerText에 출력할 내용을 대입
                 document.getElementById("parents").appendChild(node1); // 부모의 자식으로 node1이 들어감
                 count++;
             }else{
-                document.getElementById("add").disabled = true;
+                u.target.disabled = true; // disabled 버튼비활성화 false면 활성화 // u.target을 사용해 add를 가리킴
             }
         });
 
