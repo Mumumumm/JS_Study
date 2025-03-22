@@ -27,20 +27,47 @@
 </head>
 
 <body style="text-align: center;">
-    <video src="./image_eevee/eevee.mp4" id="video" autoplay></video> <br>
+    <video src="./image_eevee/eevee.mp4" id="video" autoplay loop></video> <br>
     <input type="button" value="Change" onclick="changeImage()" id="changeButton">
+    <p id="eeveeValue"></p>
+
+    <!------------------html--------------------------------------------------------->
+
     <script>
+        // 진화형 정보 각각 이미지 번호에 맞게 객체 배열에 정보기입 
+        const poketValue = [
+            { name: "님피아", hp: "95", 공격: "65", 방어: "65", 특수공격: "110", 특수방어: "130", 스피드: "60", 합계: "525" },
+            { name: "블래키", hp: "95", 공격: "65", 방어: "110", 특수공격: "60", 특수방어: "130", 스피드: "65", 합계: "525" },
+            { name: "에브이", hp: "65", 공격: "65", 방어: "60", 특수공격: "130", 특수방어: "95", 스피드: "110", 합계: "525" },
+            { name: "부스터", hp: "65", 공격: "130", 방어: "60", 특수공격: "95", 특수방어: "110", 스피드: "65", 합계: "525" },
+            { name: "쥬피썬더", hp: "65", 공격: "65", 방어: "60", 특수공격: "110", 특수방어: "95", 스피드: "130", 합계: "525" },
+            { name: "라피아", hp: "65", 공격: "110", 방어: "130", 특수공격: "60", 특수방어: "65", 스피드: "95", 합계: "525" },
+            { name: "글레이시아", hp: "65", 공격: "60", 방어: "110", 특수공격: "130", 특수방어: "95", 스피드: "65", 합계: "525" },
+            { name: "샤미드", hp: "130", 공격: "65", 방어: "60", 특수공격: "110", 특수방어: "95", 스피드: "65", 합계: "525" },
+        ]
+
         let toggle = 1;
         function changeImage() {
             if (++toggle % 2 === 0) { // toggle을 먼저 + 한뒤 2로 나머지를 구했을때 0이라면
-                document.getElementById("video").src = './image_eevee/eevee.mp4' // id video인 요소에 비디오src를 불러온다
+                document.getElementById("video").src = './image_eevee/eevee.mp4'; // id video인 요소에 비디오src를 불러온다
+                document.getElementById("eeveeValue").innerText = " ";
             } else {
                 let change = Math.floor(Math.random() * 8) + 1; // 랜덤 함수를 적용하는데 0은 나오면 안되기때문에 + 1 이것을 change에 대입
-                document.getElementById("video").src = `./image_eevee/evolution${change}.mp4` // change를 evolution 에 숫자에 넣어 랜덤 이미지가 나올수 있도록 하기
+                document.getElementById("video").src = `./image_eevee/evolution${change}.mp4`; // change를 evolution 에 숫자에 넣어 랜덤 이미지가 나올수 있도록 하기
+                document.getElementById("eeveeValue").innerText = `
+                이름: ${poketValue[change - 1].name}
+                HP: ${poketValue[change - 1].hp}
+                공격: ${poketValue[change - 1].공격}
+                방어: ${poketValue[change - 1].방어}
+                특수공격: ${poketValue[change - 1].특수공격}
+                특수방어: ${poketValue[change - 1].특수방어}
+                스피드: ${poketValue[change - 1].스피드}
+                합계: ${poketValue[change - 1].합계}
+                `;
+                // 배열의 인덱스는 0부터 시작하기 때문에 랜덤함수의 - 1해준다
             }
         }
 
-        // 사용자지정 객체로 종족값 추가하기
     </script>
 </body>
 
