@@ -5,15 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    body {
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
-
-
+  <!--
+    1. 구매할 리스트 대제목 만들기
+    2. 리스트를 입력할 수 있는 텍스트창 만들기
+    3. 추가하기 위한 버튼 만들기
+    4. ul 리스트 안에 li 리스트가 생성될 수 있게 ul을 먼저 만들어 놓기
+    5. li 가 생성될때 꾸며져 보이기
+  -->
+  <h1>구매 할 리스트</h1>
+  <input type="text" id="inputText" placeholder="추가 할 내용 입력">
+  <button type="button" id="inputButton">추 가</button>
+  <ul id="listContainer">화면에 보이기 위한 임시 ul태그</ul>
 
 
   <script>
+    // 1. 버튼에 클릭 이벤트를 만들자
+    document.getElementById("inputButton").addEventListener("click", (c) => {
 
+    })
   </script>
 
 </body>
