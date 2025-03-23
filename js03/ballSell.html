@@ -1,38 +1,80 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .product-container{display: flex; gap: 20px;}
-        .product-card{
+        .product-container {
+            display: block;
+            gap: 20px;
+        }
+
+        .product-card {
             border: 1px solid #ddd;
             padding: 10px;
             width: 150px;
             text-align: center;
             border-radius: 5px;
+            display: inline-block;
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #searchBall {
+            text-align: center;
+            margin: 0 calc(50% - 96.5px);
+            margin-bottom: 20px;
+            padding: 5px 10px 5px 10px;
         }
     </style>
 </head>
+
 <body>
     <h2>제품 목록</h2>
+    <input type="search" name="" id="searchBall">
     <div class="product-container" id="productContainer"></div>
 
     <script>
         const product = [ // 배열리스트 
-            {name: "몬스터볼", price: 1500, image: "./ball/monsterBall.webp"},
-            {name: "수퍼볼", price: 2000, image: "./ball/GreatBall.webp"},
-            {name: "울트라볼", price: 3000, image: "./ball/UltraBall.webp"},
-            {name: "마스터볼", price: 1500000, image: "./ball/MasterBall.webp"},
-            {name: "사파리볼", price: 500, image: "./ball/SafariBall.webp"},
-            {name: "컴퍼티션볼", price: 2300, image: "./ball/SportBall.webp"},
-            {name: "레벨볼", price: 1800, image: "./ball/LevelBall.webp"},
-            {name: "프렌드볼", price: 800, image: "./ball/FriendBall.webp"},
+            { name: "몬스터볼", price: 1500, image: "./ball/monsterBall.webp" },
+            { name: "수퍼볼", price: 2000, image: "./ball/GreatBall.webp" },
+            { name: "울트라볼", price: 3000, image: "./ball/UltraBall.webp" },
+            { name: "마스터볼", price: 1500000, image: "./ball/MasterBall.webp" },
+            { name: "사파리볼", price: 500, image: "./ball/SafariBall.webp" },
+            { name: "컴퍼티션볼", price: 2300, image: "./ball/SportBall.webp" },
+            { name: "레벨볼", price: 1800, image: "./ball/LevelBall.webp" },
+            { name: "프렌드볼", price: 800, image: "./ball/FriendBall.webp" },
+            { name: "루어볼", price: 3800, image: "./ball/LureBall.webp" },
+            { name: "문 볼", price: 1200, image: "./ball/MoonBall.webp" },
+            { name: "러브볼", price: 2200, image: "./ball/LoveBall.webp" },
+            { name: "스피드볼", price: 770, image: "./ball/FastBall.webp" },
+            { name: "헤비볼", price: 4000, image: "./ball/HeavyBall.webp" },
+            { name: "네트볼", price: 1000, image: "./ball/NetBall.webp" },
+            { name: "다이브볼", price: 1000, image: "./ball/DiveBall.webp" },
+            { name: "네스트볼", price: 1500, image: "./ball/NestBall.webp" },
+            { name: "타이머볼", price: 2400, image: "./ball/TimerBall.webp" },
+            { name: "리피트볼", price: 3100, image: "./ball/RepeatBall.webp" },
+            { name: "럭셔리볼", price: 10000, image: "./ball/LuxuryBall.webp" },
+            { name: "프레셔스볼", price: 800, image: "./ball/CherishBall.webp" },
+            { name: "힐 볼", price: 600, image: "./ball/HealBall.webp" },
+            { name: "다크볼", price: 1900, image: "./ball/DuskBall.webp" },
+            { name: "퀵 볼", price: 700, image: "./ball/QuickBall.webp" },
+            { name: "드림볼", price: 1100, image: "./ball/DreamBall.webp" },
+            { name: "비스트볼", price: 40000, image: "./ball/BeastBall.webp" },
         ];
 
+        // const Container = document.getElementById('productContainer'); // 위에랑 똑같이 부모 박스를 데려와
+        // const ballCard = document.createElement("div") // 
+
         const container = document.getElementById("productContainer"); // 안쪽 div가 들어갈, 바깥쪽 div를 가져와 container에 대입
-        product.forEach((info)=>{ // 화살표 함수 // forEach 가 각배열을 한 번씩 넣어준다
+        product.forEach((info) => { // 화살표 함수 // forEach 가 각배열을 한 번씩 넣어준다
             const ballCard = document.createElement("div"); // 비어있는 div 생성
             ballCard.className = "product-card"; // ballCard에 클래스명을 넣어주기 위함
 
@@ -41,16 +83,54 @@
             <h3> ${info.name} </h3>
             <p>가격: ${info.price.toLocaleString()}원</p>
             `; // div 하나 하나에 들어갈 내용들 // info. 으로 적은건 product정보를 info가 받고 있어서
-
+            // toLocalseString() 가격에 , 붙여준다
             container.appendChild(ballCard);
         });
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // // 1. 값이 들어갈때마다 이벤트를 발생시키자
+        // document.getElementById("searchBall").addEventListener("input", (s) => {
+        //     // 2. 그래서 무슨 이벤트여야 하냐면 내가 입력한 값이 해당하는것 만 출력되야하니 맞는 정의를 하자
+        //     let str = document.getElementById("searchBall").value; // 2-1. 내가 입력한 값을 먼저 가져오자
+
+        //     // 3. 내가 입력한 값과 비교하기 위해 product에 있는 배열을 순회해야해 for 사용하자
+        //     for (let ballList of product) { // for of로 순차적으로 쫙 읽은 뒤 새로운 배열을 사용자 입력값에 해당하는 내용만 출력해주자
+        //         // 4. 그러면 값을 입력했을때 일치 하는 단어만 나와야하니 조건을 걸어야지
+        //         // 추가로 이름으로만 가능해 가격 이미지는 해당하지 않아
+        //         if (ballList.name.includes(str)) { // 조건을 product변수의.name 이 내가 입력한 값(str)이 포함(includes)되어 있다면
+        //             // 5. 이제 그 조건에 들어왔으면 출력해야해
+
+        //         };
+        //     };
+        // })
+
+        // 내가 놓친 것 25-03-23 //
+        // 1. 이름에서만 값이 포함 되어야 하는데 product.includes 쓴것 product.name.includes 으로 수정해야함
+
+        // 2. 조건을 걸어야 하는건 맞지만 그 전에 모든 리스트를 읽어볼수 있게 for안에 넣지 않은것
+
+
+
+
         // fot(let card of product){
         //     const ballCard = document.createElement("div");
-        //     ballCard.className = "product-card"; 
+        //     ballCard.className = "product-card";
 
         //     ballCard.innerHTML = `
         //     <img src="${info.image}" width="100px" height="100px">
@@ -62,4 +142,5 @@
         // }
     </script>
 </body>
+
 </html>

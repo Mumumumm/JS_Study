@@ -71,7 +71,6 @@
 
       // 10. 내용 초기화하기
       document.getElementById("lottoBox").innerText = " "; // 반복문이 끝나고 div (부모박스) 의 내용을 초기화
-
       // 2. 반복문안에서 서로 다른 번호와 박스를 6개를 생성하기
       for (let i = 0; i < 6; i++) {
         // 3.지역변수로 정의 번호는 1~45까지 나올수 있게 0 방지를 위한 +1 적용
@@ -83,9 +82,9 @@
           num.className = "lottoList"; // 7. div(자식)박스에 클래스명 주기 , 공통된 내부 스타일 시트 적용을 위해서 
           num.innerText = `${lotto[i]}`; // 8. lotto[index]의 각랜덤 번호를 => <div>사이에 출력</div>
           document.getElementById("lottoBox").appendChild(num); // 9. 출력이후 로또번호(자식)이 div(부모) 안으로 들어가게 하기
-        } else {
+        } else {// 조건이 안되어 그대로 빠져나오면 다시 반복할 수 있게 마이너스 한다
           i--;
-        }
+        };
       };
     });
 
