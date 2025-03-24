@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .lotooNumbers {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            text-align: center;
+            line-height: 50px;
+            background-color: yellow;
+            margin: 50px 10px 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>로또 번호 생성기</h1>
+    <button id="lotto">로또 번호 생성</button>
+    <div id="lottoNumber"></div>
+
+    <script>
+        document.getElementById("lotto").addEventListener("click", (e) => {
+            //----------------------------------------------------------------------------------------------------------------
+            // 방법 1
+            // let numbers = [];
+            // for (let i = 1; i <= 45; i++) {
+            //     numbers.push(i); // 45 숫자 배열에 푸쉬            
+            // }
+            // let lotto = [];
+            // for (let i = 0; i < 6; i++) {
+            //     const randomIndex = Math.floor(Math.random() * numbers.length); // 하나 들어갈때마다 숫자 길이가 줄어드니까
+            //     lotto.push(numbers[randomIndex]);
+            //     numbers = numbers.filter((n) => n !== numbers[randomIndex]); // 다른번호만 나오게 한다 
+            // }
+
+            //----------------------------------------------------------------------------------------------------------------
+            // 방법 2
+            let lotto = [];
+            while(true){
+                let number = Math.floor(Math.random() * 45) + 1;
+                if(lotto.find((n)=>n === number)){ // find 는 가장먼저 조건에 맞는 값 첫번째, 한개만 가져온다 
+                    continue; // 중복된게 있다면 다시 구함
+                }
+                lotto.push(number);
+                if(lotto.length === 6){
+                    break;
+                }
+            }
+            //----------------------------------------------------------------------------------------------------------------
+
+            lotto.sort((a, b) => a - b); // 오름차순
+            const lottoDiv = document.getElementById("lottoNumber");
+            lottoDiv.innerHTML = lotto.map((num) => `<span class="lotooNumbers">${num}</span>`).join(" ");
+        });
+    </script>
+</body>
+
+</html>
